@@ -1,1 +1,1 @@
-#####Ajout du readme###########
+Projet 6 OCR EN COURS
