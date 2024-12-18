@@ -1,0 +1,17 @@
+{
+    "name": "lucas/ocr-p6",
+    "autoload": {
+        "psr-4": {
+            "Lucas\\OcrP6\\": "src/",
+            "Services\\": "src/Services/",
+            "Controllers\\": "src/Controllers/",
+            "Views\\": "src/Views/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas SCHNELZAUER"
+        }
+    ],
+    "require": {}
+}
