@@ -1,0 +1,121 @@
+/**
+ * Reset css.
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    min-height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #F5F3EF;
+    font-family: Inter , sans-serif;
+
+
+}
+
+/* Remove puce */
+header ul {
+    list-style: none;
+}
+
+/* Remove line on the a */
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* Premier menu */
+.nav-menu .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-menu .menu li {
+    display: flex;
+    padding: 10px 20px;
+}
+
+/* Deuxième menu */
+.nav-account .menu-account{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-account .menu-account li {
+    display: flex;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer */
+
+footer{
+    background-color: white;
+    min-height: 61px;
+}
+
+/* Remove puce */
+footer ul{
+    list-style: none;
+}
+
+/* Remove line on the a */
+footer ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-footer .menu-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.nav-footer .menu-footer ul li {
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+.nav-footer{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+
+}
+
+.menu-footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.logo-footer{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+}
+
