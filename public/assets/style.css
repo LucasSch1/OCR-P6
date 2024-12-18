@@ -58,17 +58,6 @@ header ul li a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*Footer */
 
 footer{
@@ -119,3 +108,21 @@ footer ul li a {
     padding: 10px 20px;
 }
 
+
+
+/* Page accueil */
+
+.section-one{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    background-color: #F5F3EF;
+}
+
+.container-left h1{
+    font-size: 36px;
+}
+
+.container-left{
+    width: 25%;
+}
