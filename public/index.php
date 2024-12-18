@@ -3,7 +3,8 @@
 
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
+// Inclure la configuration
+require_once __DIR__ . '/../src/config/config.php';
 use Controllers\HomeController;
 use Services\Utils;
 
