@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /**
  * Reset css.
  */
@@ -113,16 +114,45 @@ footer ul li a {
 /* Page accueil */
 
 .section-one{
+    min-height: 702px;
     display: flex;
     align-items: center;
     text-align: justify;
+    justify-content: center;
     background-color: #F5F3EF;
 }
 
 .container-left h1{
     font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
 }
 
 .container-left{
-    width: 25%;
+    width: 329px;
+    align-items: center;
+    margin: 120px;
+}
+
+.container-left p {
+    font-size: 16px;
+    font-family: Inter , sans-serif;
+    font-weight: 300;
+}
+
+.container-left .btn-container{
+    font-family: Inter , sans-serif;
+    display: flex;
+    width: 152px;
+    height: 63px;
+    align-items: center;
+    justify-content: center;
+    background-color: #00AC66;
+    border-radius: 16px;
+}
+
+.btn-container a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
 }
