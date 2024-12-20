@@ -5,6 +5,8 @@
  */
 
 namespace Views;
+use Exception;
+
 class View
 {
     /**
