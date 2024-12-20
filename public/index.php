@@ -6,7 +6,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 // Inclure la configuration
 require_once __DIR__ . '/../src/config/config.php';
 use Controllers\HomeController;
+use Controllers\LoginController;
 use Services\Utils;
+use Views\View;
 
 
 // On récupère l'action demandée par l'utilisateur.
@@ -20,6 +22,20 @@ try {
         case 'home':
             $homeController = new HomeController();
             $homeController->showHome();
+            break;
+
+
+
+
+
+
+
+
+        // connexion et inscription
+
+        case 'connectionForm':
+            $loginController = new LoginController();
+            $loginController->showLogin();
             break;
     }
 } catch (Exception $e) {
