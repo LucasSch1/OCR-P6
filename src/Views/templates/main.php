@@ -26,7 +26,7 @@
         <ul class="menu-account">
             <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/login">Messagerie</a></li>
             <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/logout">Mon compte</a></li>
-            <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/logout">Connexion</a></li>
+            <li><a href="index.php?action=login">Connexion</a></li>
         </ul>
     </nav>
 </header>
