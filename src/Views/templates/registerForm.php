@@ -1,20 +1,22 @@
 <?php
-/** Page de connexion  */
+/** Page d'inscription  */
 ?>
 
-<section class="container-connection">
+<section class="container-registration">
     <div class="container-left">
         <div class="container-form">
-            <h1>Connexion</h1>
+            <h1>Inscription</h1>
             <form>
+                <label for="pseudo">Pseudo</label>
+                <input type="text">
                 <label for="email">Adresse mail</label>
                 <input type="text">
                 <label for="password">Mot de passe</label>
                 <input type="password">
-                <input type="submit" class="submit-connection" value="Connexion">
+                <input type="submit" class="submit-registration" value="S'inscrire">
             </form>
 
-            <p>Pas de compte ? <a href="?action=registerForm"">Inscrivez-vous</a></p>
+            <p>Déjà inscrit ? <a href="?action=connectionForm">Connectez-vous</a></p>
         </div>
     </div>
     <div class="container-right">

@@ -7,6 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../src/config/config.php';
 use Controllers\HomeController;
 use Controllers\LoginController;
+use Controllers\RegisterController;
 use Services\Utils;
 use Views\View;
 
@@ -37,6 +38,11 @@ try {
             $loginController = new LoginController();
             $loginController->showLogin();
             break;
+
+        case 'registerForm':
+            $registerController = new RegisterController();
+            $registerController->showRegistration();
+            break ;
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
