@@ -4,10 +4,10 @@
  */
 namespace Lucas\OcrP6\Models;
 
-class User
+class User extends AbstractEntity
 {
-    private $username;
-    private $email;
+    private string $username;
+    private string $email;
     private $password;
     private $picture;
 
@@ -42,5 +42,10 @@ class User
     public function getPicture() : string {
         return $this->picture;
     }
+
+    public function setId(int $id) : void{
+        $this->id = $id;
+    }
+
 
 }
