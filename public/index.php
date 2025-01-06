@@ -58,6 +58,10 @@ try {
             $adminController = new AdminController();
             $adminController->disconnectUser();
             break;
+
+        case 'accountUser':
+            $adminController = new AdminController();
+            $adminController->showAccount();
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
