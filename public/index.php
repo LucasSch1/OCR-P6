@@ -5,9 +5,9 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 // Inclure la configuration
 require_once __DIR__ . '/../src/config/config.php';
+
+use Controllers\AdminController;
 use Controllers\HomeController;
-use Controllers\LoginController;
-use Controllers\RegisterController;
 use Services\Utils;
 use Views\View;
 
@@ -35,14 +35,19 @@ try {
         // connexion et inscription
 
         case 'connectionForm':
-            $loginController = new LoginController();
-            $loginController->showLogin();
+            $adminController = new AdminController();
+            $adminController->showLogin();
             break;
 
         case 'registerForm':
-            $registerController = new RegisterController();
-            $registerController->showRegistration();
+            $adminController = new AdminController();
+            $adminController->showRegistration();
             break ;
+
+        case 'createUser':
+            $adminController = new AdminController();
+            $adminController->createUser1();
+            break;
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
