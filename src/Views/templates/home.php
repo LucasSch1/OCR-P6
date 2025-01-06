@@ -2,6 +2,14 @@
  /** Page d'accueil */
 ?>
 
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    echo "<pre>";
+    print_r($_SESSION['user']);
+    echo "<pre>";
+}
+?>
 <div class="page">
     <section class="section-one">
         <div class="container-left">
