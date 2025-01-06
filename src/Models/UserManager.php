@@ -9,8 +9,10 @@ class UserManager
 {
     public function createUser($email, $password, $username)  {
 
+        $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+
         $db = DBManager::getConnection();
         $stmt = $db->prepare("INSERT INTO user (email, password, username) VALUES (?, ?, ?)");
-        $stmt->execute([$email, $password, $username]);
+        $stmt->execute([$email, $passwordhash, $username]);
     }
 }
