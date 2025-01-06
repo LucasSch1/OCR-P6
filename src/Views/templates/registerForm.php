@@ -6,13 +6,13 @@
     <div class="container-left">
         <div class="container-form">
             <h1>Inscription</h1>
-            <form>
+            <form method="POST" action="index.php?action=createUser">
                 <label for="pseudo">Pseudo</label>
-                <input type="text">
+                <input type="text" name="username">
                 <label for="email">Adresse mail</label>
-                <input type="text">
+                <input type="text" name="email">
                 <label for="password">Mot de passe</label>
-                <input type="password">
+                <input type="password" name="password">
                 <input type="submit" class="submit-registration" value="S'inscrire">
             </form>
 
