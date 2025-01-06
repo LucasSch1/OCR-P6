@@ -1,4 +1,8 @@
 <?php
+namespace Lucas\OcrP6\Config;
+use PDO;
+use PDOException;
+
 require_once 'config.php'; // Inclure la configuration
 
 class DBManager {
