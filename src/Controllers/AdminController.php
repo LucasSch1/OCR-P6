@@ -21,7 +21,7 @@ class AdminController
         $view->render("registerForm");
     }
 
-    public function createUser1(){
+    public function createUser(){
 
         $username = Utils::request("username");;
         $email = Utils::request("email");;
@@ -38,5 +38,55 @@ class AdminController
 
         Utils::redirect("home");
     }
+
+    public function connectUser() {
+        $email = Utils::request("email");
+        $password = Utils::request("password");
+
+        if (empty($email) || empty($password)) {
+            throw new \Exception("Tous les champs sont obligatoires.");
+        }
+
+        $userManager = new UserManager();
+        $user = $userManager->getUserByEmail($email);
+
+        if ($user && password_verify($password, $user->getPassword())) {
+            // Connexion réussie : démarrer la session
+            session_start();
+
+            // Stocker les informations dans la session
+            $_SESSION['user'] = [
+                'id' => $user->getId(),
+                'username' => $user->getUsername(),
+            ];
+            $_SESSION['user_id'] = $user->getId(); // Redondance possible, à éviter si inutile
+
+            // Rediriger l'utilisateur vers la page d'accueil
+            Utils::redirect("home");
+            exit();
+        } else {
+            // Gestion des erreurs d'authentification
+            throw new \Exception("Email ou mot de passe incorrect.");
+        }
+    }
+
+    public function disconnectUser(): void
+    {
+        // Démarre la session si ce n'est pas déjà fait
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Supprime toutes les variables de session
+        $_SESSION = [];
+
+        // Détruis la session
+        session_destroy();
+
+        // Redirige vers la page d'accueil
+        Utils::redirect("home");
+        exit();
+    }
+
 
 }
