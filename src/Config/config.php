@@ -2,7 +2,7 @@
 namespace Config;
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'ocr-p6');
+define('DB_NAME', 'ocr_p6');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('BASE_URL', '/OCR-P6/OCR-P6/public/');
