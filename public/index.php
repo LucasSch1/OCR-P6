@@ -46,7 +46,17 @@ try {
 
         case 'createUser':
             $adminController = new AdminController();
-            $adminController->createUser1();
+            $adminController->createUser();
+            break;
+
+        case 'connectUser':
+            $adminController = new AdminController();
+            $adminController->connectUser();
+            break;
+
+        case 'disconnectUser':
+            $adminController = new AdminController();
+            $adminController->disconnectUser();
             break;
     }
 } catch (Exception $e) {
