@@ -448,6 +448,7 @@ footer ul li a {
     display: flex;
     flex-direction: row;
     background-color: #FAF9F7;
+    height: 886px;
 }
 
 .container-connection .container-left{
@@ -526,6 +527,7 @@ footer ul li a {
 
 .container-connection .container-right img{
     width: 100%;
+    object-fit: cover;
 }
 
 .container-connection .container-left .container-form p{
@@ -545,6 +547,8 @@ footer ul li a {
     display: flex;
     flex-direction: row;
     background-color: #FAF9F7;
+    width: 100%;
+    height: 886px;
 }
 
 .container-registration .container-left{
@@ -584,6 +588,7 @@ footer ul li a {
     height: 50px;
     border: 1px solid #F0F0F0;
     border-radius: 6px;
+    padding: 5px;
 }
 
 
@@ -596,11 +601,11 @@ footer ul li a {
 .container-registration  .submit-registration{
     background-color: #00AC66;
     width: 100%;
-    height: auto;
+    height: 63px !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 10px !important;
     margin-top: 30px;
     text-decoration: none;
     color: #FFFFFF;
@@ -623,6 +628,7 @@ footer ul li a {
 
 .container-registration .container-right img{
     width: 100%;
+    object-fit: cover;
 }
 
 .container-registration .container-left .container-form p{
