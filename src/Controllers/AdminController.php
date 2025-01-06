@@ -21,6 +21,13 @@ class AdminController
         $view->render("registerForm");
     }
 
+    public function showAccount()
+    {
+        $view = new View("Compte");
+        $view->render("account");
+    }
+
+
     public function createUser(){
 
         $username = Utils::request("username");;
