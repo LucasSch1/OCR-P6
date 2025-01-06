@@ -25,8 +25,15 @@
     <nav class="nav-account">
         <ul class="menu-account">
             <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/login">Messagerie</a></li>
-            <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/logout">Mon compte</a></li>
-            <li><a href="index.php?action=connectionForm">Connexion</a></li>
+            <?php
+            // Si on est connecté, on affiche le bouton de déconnexion, sinon, on affiche le bouton de connexion :
+            if (isset($_SESSION['user'])) {
+                echo '<li><a href="index.php?action=disconnectUser">Mon compte</a></li>';
+                echo '<li><a href="index.php?action=disconnectUser">Déconnexion</a></li>';
+            }else{
+                echo '<li><a href="index.php?action=connectionForm">Connexion</a></li>';
+            }
+            ?>
         </ul>
     </nav>
 </header>
