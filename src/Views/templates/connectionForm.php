@@ -6,11 +6,11 @@
     <div class="container-left">
         <div class="container-form">
             <h1>Connexion</h1>
-            <form>
+            <form method="POST" action="?action=connectUser">
                 <label for="email">Adresse mail</label>
-                <input type="text">
+                <input type="text" name="email">
                 <label for="password">Mot de passe</label>
-                <input type="password">
+                <input type="password" name="password">
                 <input type="submit" class="submit-connection" value="Connexion">
             </form>
 
