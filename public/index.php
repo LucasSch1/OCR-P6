@@ -42,7 +42,7 @@ try {
         case 'registerForm':
             $adminController = new AdminController();
             $adminController->showRegistration();
-            break ;
+            break;
 
         case 'createUser':
             $adminController = new AdminController();
