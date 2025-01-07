@@ -9,6 +9,8 @@ class User extends AbstractEntity
     private string $username;
     private string $email;
     private $password;
+
+    private $date_created;
     private $picture;
 
     public function setUsername($username) : void{
@@ -37,6 +39,14 @@ class User extends AbstractEntity
 
     public function setPicture($picture) : void {
         $this->picture = $picture;
+    }
+
+    public function getDateCreated()  {
+        return $this->date_created;
+    }
+
+    public function setDateCreated(string $date_created) : void {
+        $this->date_created = $date_created;
     }
 
     public function getPicture() : string {
