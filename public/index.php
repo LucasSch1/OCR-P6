@@ -59,9 +59,9 @@ try {
             $adminController->disconnectUser();
             break;
 
-        case 'accountUser':
+        case 'privateAccountUser':
             $adminController = new AdminController();
-            $adminController->showAccount();
+            $adminController->showPrivateAccount();
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
