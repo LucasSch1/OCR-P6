@@ -21,10 +21,10 @@ class AdminController
         $view->render("registerForm");
     }
 
-    public function showAccount()
+    public function showPrivateAccount()
     {
-        $view = new View("Compte");
-        $view->render("account");
+        $view = new View("Mon Compte");
+        $view->render("privateAccount");
     }
 
 
@@ -57,7 +57,7 @@ class AdminController
         $userManager = new UserManager();
         $user = $userManager->getUserByEmail($email);
 
-        if ($user && password_verify($password, $user->getPassword())) {
+        if ($user && $password === $user->getPassword()) {
             // Connexion réussie : démarrer la session
             session_start();
 
@@ -65,8 +65,11 @@ class AdminController
             $_SESSION['user'] = [
                 'id' => $user->getId(),
                 'username' => $user->getUsername(),
+                'email' => $user->getEmail(),
+                'password' => $user->getPassword(),
+                'date_created' => $user->getDateCreated(),
+                'picture' => $user->getPicture()
             ];
-            $_SESSION['user_id'] = $user->getId(); // Redondance possible, à éviter si inutile
 
             // Rediriger l'utilisateur vers la page d'accueil
             Utils::redirect("home");
