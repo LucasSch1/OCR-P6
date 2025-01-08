@@ -71,6 +71,11 @@ class AdminController
                 'picture' => $user->getPicture()
             ];
 
+
+            $userId = $_SESSION['user']['id'];
+            $books = $userManager->getBookByUserId($userId);
+
+
             // Rediriger l'utilisateur vers la page d'accueil
             Utils::redirect("home");
             exit();
