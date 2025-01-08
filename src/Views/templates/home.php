@@ -7,6 +7,7 @@ session_start();
 if (isset($_SESSION['user'])) {
     echo "<pre>";
     print_r($_SESSION['user']);
+    print_r($_SESSION['user']['id']);
     echo "<pre>";
 }
 ?>
