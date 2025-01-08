@@ -855,3 +855,62 @@ footer ul li a {
     font-style: normal;
     font-weight: 600;
 }
+
+
+/* Partie bibliothèque */
+
+.page-private-account .grid-container .library-user{
+    display: flex;
+    width: 1140px;
+    background-color: #FFF;
+    border-radius: 20px;
+
+}
+
+/*.page-private-account .grid-container .library-user th tr{*/
+/*    display: flex;*/
+/*    margin-top: 3.24px;*/
+/*}*/
+
+.page-private-account .grid-container .library-user th{
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 600;
+    color: #292929;
+    letter-spacing: 0.64px;
+}
+
+.page-private-account .grid-container .library-user .td-cover img{
+    width: 78px;
+    height: 78px;
+}
+
+.page-private-account .grid-container .library-user .td-titre{
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #292929;
+}
+
+.page-private-account .grid-container .library-user .td-auteur{
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #292929;
+}
+
+.page-private-account .grid-container .library-user .td-description{
+    width: 128px;
+    height: 62px;
+    overflow: hidden;
+    color: #292929;
+    text-overflow: ellipsis;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
