@@ -103,5 +103,32 @@ class AdminController
         exit();
     }
 
+    public function updateUser(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $userId = $_SESSION['user']['id'];
+        $usernameUpdate = Utils::request("usernameUpdate");
+        $emailUpdate = Utils::request("emailUpdate");
+        $passwordUpdate = Utils::request("passwordUpdate");
+
+
+        if (empty($usernameUpdate) || empty($emailUpdate) || empty($passwordUpdate)) {
+            throw new Exception("Tous les champs doivent être remplis.");
+        }
+        $userManager = new UserManager();
+        $userManager->updateUser($emailUpdate, $passwordUpdate, $usernameUpdate,$userId);
+
+
+        $_SESSION['user']['email'] = $emailUpdate;
+        $_SESSION['user']['password'] = $passwordUpdate;
+        $_SESSION['user']['username'] = $usernameUpdate;
+
+        Utils::redirect("privateAccountUser");
+        exit();
+
+
+    }
+
 
 }
