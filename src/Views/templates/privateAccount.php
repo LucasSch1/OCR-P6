@@ -31,13 +31,13 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
             </div>
             <div class="container-right">
                 <h2>Vos informations personnelles</h2>
-                <form method="POST" action="index.php?action=createUser">
+                <form method="POST" action="index.php?action=updateUser">
                     <label for="email">Adresse mail</label>
-                    <input type="text" name="email" value="<?php echo htmlspecialchars($_SESSION['user']['email']); ?>">
+                    <input type="text" name="emailUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['email']); ?>">
                     <label for="password">Mot de passe</label>
-                    <input type="password" name="password" value="<?php echo htmlspecialchars($_SESSION['user']['password']); ?>">
+                    <input type="password" name="passwordUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['password']); ?>">
                     <label for="pseudo">Pseudo</label>
-                    <input type="text" name="username" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>">
+                    <input type="text" name="usernameUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>">
                     <input type="submit" class="submit-modification" value="Enregistrer">
                 </form>
 
@@ -56,6 +56,7 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
                     <th>ACTION</th>
 
                 </tr>
+
                 </thead>
                 <tbody>
                 <!-- Données dynamiques en PHP -->
@@ -67,8 +68,8 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
                         <td class="td-description"><?= htmlspecialchars($shortDescription = substr($book['DESCRIPTION'], 0, 87).'...', ENT_QUOTES, 'UTF-8') ?></td>
                         <td class="td-disponibilite"><?= htmlspecialchars($book['DISPONIBILITY'], ENT_QUOTES, 'UTF-8') ?></td>
                         <td>
-                            <a href="">Editer</a>
-                            <a href="">Supprimer</a>
+                            <a class="edit-button" href="">Éditer</a>
+                            <a class="delete-button" href="">Supprimer</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
