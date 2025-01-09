@@ -106,4 +106,10 @@ class UserManager
 
         return $result['registration_date'] ?? null; // Retourne la date ou null si introuvable
     }
+
+    public function updateUser($emailUpdate, $passwordUpdate, $usernameUpdate ,$userId){
+        $db = DBManager::getConnection();
+        $stmt = $db->prepare("UPDATE user SET email = :email , password = :password, username = :username WHERE id = :id");
+        $stmt->execute(['email' => $emailUpdate, 'password' => $passwordUpdate, 'username' => $usernameUpdate , 'id' => $userId]);
+    }
 }
