@@ -857,6 +857,13 @@ footer ul li a {
 }
 
 
+.page-private-account .informations-cards .container-right form .submit-modification:hover{
+    background-color: #006D41;
+    border-color: #006D41;
+    color: #FFFFFF;
+}
+
+
 /* Partie bibliothèque */
 
 .page-private-account .grid-container .library-user{
@@ -867,10 +874,18 @@ footer ul li a {
 
 }
 
-/*.page-private-account .grid-container .library-user th tr{*/
-/*    display: flex;*/
-/*    margin-top: 3.24px;*/
-/*}*/
+.page-private-account .grid-container .library-user table{
+    width: auto;
+    table-layout: auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+
+.page-private-account .grid-container .library-user thead {
+    border-bottom: 1px solid #F5F3EF; /* Ligne noire épaisse */
+}
+
 
 .page-private-account .grid-container .library-user th{
     font-family: 'Inter', sans-serif;
@@ -880,6 +895,28 @@ footer ul li a {
     color: #292929;
     letter-spacing: 0.64px;
 }
+
+.page-private-account .grid-container .library-user th,td{
+    padding-bottom: 8.29px;
+    padding-top: 33.24px;
+    padding-left: 46px;
+    padding-right: 46px;
+    text-align: left;
+
+}
+
+/*.page-private-account .grid-container .library-user th,td{*/
+/*    padding: 33.34px 46px;*/
+/*}*/
+
+.page-private-account .grid-container .library-user tr .td-cover{
+    padding-left: 56px;
+    /*padding-right: 80px;*/
+}
+
+/*.page-private-account .grid-container .library-user tr .td-titre,.td-auteur,.td-description,.td-disponibilite{*/
+/*    padding-right: 80px;*/
+/*}*/
 
 .page-private-account .grid-container .library-user .td-cover img{
     width: 78px;
@@ -913,4 +950,15 @@ footer ul li a {
     font-style: italic;
     font-weight: 400;
     line-height: normal;
+}
+
+
+.page-private-account .grid-container .library-user td:nth-child(4), th:nth-child(4) { /* 4ème colonne (Description) */
+    width: 20%; /* Ajustez la largeur selon vos besoins */
+}
+
+
+
+.page-private-account .grid-container .library-user td .edit-button{
+    padding-right: 28px;
 }
