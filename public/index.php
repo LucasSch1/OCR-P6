@@ -62,6 +62,10 @@ try {
         case 'privateAccountUser':
             $adminController = new AdminController();
             $adminController->showPrivateAccount();
+
+        case 'updateUser':
+            $adminController = new AdminController();
+            $adminController->updateUser();
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
