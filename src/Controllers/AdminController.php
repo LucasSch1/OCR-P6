@@ -34,13 +34,15 @@ class AdminController
         $email = Utils::request("email");;
         $password = Utils::request("password");
 
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
 
         if (empty($username) || empty($password) || empty($email)) {
             throw new Exception("Tous les champs sont obligatoires. 1");
         }
 
         $userManager = new UserManager();
-        $userManager->createUser($email, $password, $username);
+        $userManager->createUser($email, $passwordHash, $username);
 
 
         Utils::redirect("home");
@@ -57,16 +59,14 @@ class AdminController
         $userManager = new UserManager();
         $user = $userManager->getUserByEmail($email);
 
-        if ($user && $password === $user->getPassword()) {
-            // Connexion réussie : démarrer la session
+        if ($user && password_verify($password, $user->getPassword())) {
             session_start();
 
-            // Stocker les informations dans la session
+
             $_SESSION['user'] = [
                 'id' => $user->getId(),
                 'username' => $user->getUsername(),
                 'email' => $user->getEmail(),
-                'password' => $user->getPassword(),
                 'date_created' => $user->getDateCreated(),
                 'picture' => $user->getPicture()
             ];
@@ -76,29 +76,25 @@ class AdminController
             $books = $userManager->getBookByUserId($userId);
 
 
-            // Rediriger l'utilisateur vers la page d'accueil
+
             Utils::redirect("home");
             exit();
         } else {
-            // Gestion des erreurs d'authentification
+
             throw new \Exception("Email ou mot de passe incorrect.");
         }
     }
 
     public function disconnectUser(): void
     {
-        // Démarre la session si ce n'est pas déjà fait
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
-        // Supprime toutes les variables de session
         $_SESSION = [];
 
-        // Détruis la session
         session_destroy();
 
-        // Redirige vers la page d'accueil
         Utils::redirect("home");
         exit();
     }
@@ -112,22 +108,73 @@ class AdminController
         $emailUpdate = Utils::request("emailUpdate");
         $passwordUpdate = Utils::request("passwordUpdate");
 
+        $passwordHash = password_hash($passwordUpdate, PASSWORD_DEFAULT);
+
 
         if (empty($usernameUpdate) || empty($emailUpdate) || empty($passwordUpdate)) {
             throw new Exception("Tous les champs doivent être remplis.");
         }
         $userManager = new UserManager();
-        $userManager->updateUser($emailUpdate, $passwordUpdate, $usernameUpdate,$userId);
+        $userManager->updateUser($emailUpdate, $passwordHash, $usernameUpdate,$userId);
 
 
         $_SESSION['user']['email'] = $emailUpdate;
-        $_SESSION['user']['password'] = $passwordUpdate;
         $_SESSION['user']['username'] = $usernameUpdate;
 
         Utils::redirect("privateAccountUser");
         exit();
 
 
+    }
+
+    public function updateUserPicture(): void
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile-picture'])) {
+            // Vérifie si l'utilisateur est connecté
+            if (!isset($_SESSION['user']['id'])) {
+                throw new Exception("Vous devez être connecté pour effectuer cette action.");
+            }
+
+            $userId = $_SESSION['user']['id'];
+            $file = $_FILES['profile-picture'];
+
+            // Vérifie si le fichier est valide
+            if ($file['error'] !== UPLOAD_ERR_OK) {
+                throw new Exception("Erreur lors du téléchargement de l'image.");
+            }
+
+            // Détermine le dossier de destination dans public/assets/profile-images
+            $uploadDir = __DIR__ . '../public/assets/profile-images/' . $userId;
+
+            // Crée le dossier si nécessaire
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+
+            // Génère un nom de fichier unique
+            $fileName = uniqid() . '-' . basename($file['name']);
+            $uploadPath = $uploadDir . '/' . $fileName;
+
+            // Déplace le fichier téléchargé
+            if (!move_uploaded_file($file['tmp_name'], $uploadPath)) {
+                throw new Exception("Impossible de déplacer le fichier téléchargé.");
+            }
+
+            $userManager = new UserManager();
+            $userManager->updateUserPicture($userId, 'assets/profile-images/' . $userId . '/' . $fileName);
+
+            // Met à jour la session utilisateur
+            $_SESSION['user']['picture'] = 'assets/profile-images/' . $userId . '/' . $fileName;
+
+            // Redirige vers la page de profil
+            Utils::redirect("privateAccountUser");
+            exit();
+        }
+
+        throw new Exception("Aucun fichier téléchargé.");
     }
 
 
