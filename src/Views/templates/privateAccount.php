@@ -17,8 +17,11 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
         <div class="informations-cards">
             <div class="container-left">
                 <div class="img-profile-container">
-                    <img src="../<?php echo htmlspecialchars($_SESSION['user']['picture']); ?>" class="img-profile">
-                    <a href="" class="modify-button">modifier</a>
+                    <form action="index.php?action=updateUserPicture" method="POST" enctype="multipart/form-data">
+                        <img src="../<?php echo htmlspecialchars($_SESSION['user']['picture']); ?>" class="img-profile" alt="Profile Picture">
+                        <input type="file" id="profile-picture-upload" name="profile-picture" accept="image/*" onchange="this.form.submit()">
+                        <a href="#" class="modify-button" onclick="document.getElementById('profile-picture-upload').click(); return false;">modifier</a>
+                    </form>
                     <hr class="separator">
                     <h2 class="username-container"><?php echo htmlspecialchars($_SESSION['user']['username']); ?></h2>
                     <p class="date-member-container"><?php echo htmlspecialchars($userManager->getMembershipDuration($registrationDate)); ?></p>
@@ -35,7 +38,7 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
                     <label for="email">Adresse mail</label>
                     <input type="text" name="emailUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['email']); ?>">
                     <label for="password">Mot de passe</label>
-                    <input type="password" name="passwordUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['password']); ?>">
+                    <input type="password" name="passwordUpdate">
                     <label for="pseudo">Pseudo</label>
                     <input type="text" name="usernameUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>">
                     <input type="submit" class="submit-modification" value="Enregistrer">
@@ -45,7 +48,6 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
         </div>
         <div class="library-user">
             <table>
-                <!-- En-têtes statiques en HTML -->
                 <thead>
                 <tr>
                     <th>PHOTO</th>
@@ -59,16 +61,21 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
 
                 </thead>
                 <tbody>
-                <!-- Données dynamiques en PHP -->
                 <?php foreach ($books as $book): ?>
                     <tr>
                         <td class="td-cover"><img src="../<?= htmlspecialchars($book['COVER'], ENT_QUOTES, 'UTF-8') ?>"></td>
                         <td class="td-titre"><?= htmlspecialchars($book['TITLE'], ENT_QUOTES, 'UTF-8') ?></td>
                         <td class="td-auteur"><?= htmlspecialchars($book['AUTHOR'], ENT_QUOTES, 'UTF-8') ?></td>
                         <td class="td-description"><?= htmlspecialchars($shortDescription = substr($book['DESCRIPTION'], 0, 87).'...', ENT_QUOTES, 'UTF-8') ?></td>
-                        <td class="td-disponibilite"><?= htmlspecialchars($book['DISPONIBILITY'], ENT_QUOTES, 'UTF-8') ?></td>
+                        <td class="td-disponibilite">
+                            <?php if ($book['DISPONIBILITY'] == 1): ?>
+                                <span class="disponible">disponible</span>
+                            <?php else: ?>
+                                <span class="non-disponible">non dispo.</span>
+                            <?php endif; ?>
+                        </td>
                         <td>
-                            <a class="edit-button" href="">Éditer</a>
+                            <a class="edit-button" href="?action=showUpdateBook&id=<?= $book['ID'] ?>">Éditer</a>
                             <a class="delete-button" href="">Supprimer</a>
                         </td>
                     </tr>
