@@ -49,7 +49,10 @@ class User extends AbstractEntity
         $this->date_created = $date_created;
     }
 
-    public function getPicture() : string {
+    public function getPicture()  {
+        if (empty($this->picture)) {
+            return 'public/assets/profile-images/default-profile-image.png';
+        }
         return $this->picture;
     }
 
