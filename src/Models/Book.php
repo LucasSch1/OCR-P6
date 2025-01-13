@@ -5,10 +5,9 @@
 
 namespace Lucas\OcrP6\Models;
 
-class Book
+class Book extends AbstractEntity
 {
 
-    private $id;
     private $title;
 
     private $author;
@@ -19,14 +18,6 @@ class Book
 
     private $cover;
 
-
-    public function setId($id){
-        $this->id = $id;
-    }
-
-    public function getId(){
-        return $this->id;
-    }
     public function setTitle($title){
         $this->title = $title;
     }
