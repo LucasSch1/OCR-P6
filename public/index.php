@@ -7,6 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../src/config/config.php';
 
 use Controllers\AdminController;
+use Controllers\BookController;
 use Controllers\HomeController;
 use Services\Utils;
 use Views\View;
@@ -25,6 +26,28 @@ try {
             $homeController->showHome();
             break;
 
+
+        //Pages accessibles pour les personnes connectées
+
+        case 'updateUser':
+            $adminController = new AdminController();
+            $adminController->updateUser();
+            break;
+
+        case 'updateUserPicture':
+            $adminController = new AdminController();
+            $adminController->updateUserPicture();
+            break;
+
+        case 'privateAccountUser':
+            $adminController = new AdminController();
+            $adminController->showPrivateAccount();
+            break;
+
+
+        case 'showUpdateBook':
+            $bookController = new BookController();
+            $bookController->showUpdateBook();
 
 
 
@@ -59,13 +82,6 @@ try {
             $adminController->disconnectUser();
             break;
 
-        case 'privateAccountUser':
-            $adminController = new AdminController();
-            $adminController->showPrivateAccount();
-
-        case 'updateUser':
-            $adminController = new AdminController();
-            $adminController->updateUser();
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
