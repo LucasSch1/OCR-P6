@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Exception;
+use Lucas\OcrP6\Models\User;
 use Lucas\OcrP6\Models\UserManager;
 use Services\Utils;
 use Views\View;
@@ -133,7 +134,6 @@ class AdminController
             session_start();
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile-picture'])) {
-            // Vérifie si l'utilisateur est connecté
             if (!isset($_SESSION['user']['id'])) {
                 throw new Exception("Vous devez être connecté pour effectuer cette action.");
             }
@@ -141,35 +141,30 @@ class AdminController
             $userId = $_SESSION['user']['id'];
             $file = $_FILES['profile-picture'];
 
-            // Vérifie si le fichier est valide
-            if ($file['error'] !== UPLOAD_ERR_OK) {
-                throw new Exception("Erreur lors du téléchargement de l'image.");
-            }
+            $uploadDir = '../public/assets/profile-images';
 
-            // Détermine le dossier de destination dans public/assets/profile-images
-            $uploadDir = __DIR__ . '../public/assets/profile-images/' . $userId;
-
-            // Crée le dossier si nécessaire
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
+            $fileBaseName = 'profile-image-' . $userId;
+            array_map('unlink', glob($uploadDir . '/' . $fileBaseName . '.*'));
 
-            // Génère un nom de fichier unique
-            $fileName = uniqid() . '-' . basename($file['name']);
+            $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
+
+            $fileName = $fileBaseName . '.' . $fileExtension;
+
             $uploadPath = $uploadDir . '/' . $fileName;
 
-            // Déplace le fichier téléchargé
             if (!move_uploaded_file($file['tmp_name'], $uploadPath)) {
                 throw new Exception("Impossible de déplacer le fichier téléchargé.");
             }
 
             $userManager = new UserManager();
-            $userManager->updateUserPicture($userId, 'assets/profile-images/' . $userId . '/' . $fileName);
+            $userManager->updateUserPicture($userId, 'assets/profile-images/' . $fileName);
 
-            // Met à jour la session utilisateur
-            $_SESSION['user']['picture'] = 'assets/profile-images/' . $userId . '/' . $fileName;
+            $_SESSION['user']['picture'] = '/public/assets/profile-images/' . $fileName;
 
-            // Redirige vers la page de profil
+
             Utils::redirect("privateAccountUser");
             exit();
         }
