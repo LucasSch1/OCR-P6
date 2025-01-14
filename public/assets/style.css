@@ -868,6 +868,7 @@ footer ul li a {
     background-color: #006D41;
     border-color: #006D41;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 
@@ -1018,14 +1019,17 @@ footer ul li a {
 /* Page modifier les informations du livre */
 
 .container-modification-book{
+    display: flex;
+    flex-direction: column;
+    flex:1;
     background-color: #FAF9F7;
     width: 100%;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 
-.container-modification-book .return-container{
+.container-modification-book .return-container , .back-link{
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -1033,7 +1037,12 @@ footer ul li a {
     color: #A6A6A6;
     padding-top: 40px;
     padding-bottom: 23px;
+    text-decoration: none;
+
 }
+
+
+
 
 .container-modification-book .title-page{
     font-family: "Playfair Display", sans-serif;
@@ -1050,8 +1059,9 @@ footer ul li a {
     justify-content: center;
     background-color: #FFFFFF;
     width: 1141px;
-    height: 941px;
+    height: auto;
     border-radius: 20px;
+    margin-bottom: 92px;
 }
 
 
@@ -1071,6 +1081,9 @@ footer ul li a {
     padding-bottom: 10px;
 }
 
+.container-modification-book .container-main .container-photo form input{
+    display: none;
+}
 
 
 .container-modification-book .container-main .container-photo .container-image-book{
@@ -1124,7 +1137,6 @@ footer ul li a {
     padding-left: 117px;
     padding-right: 50px;
     padding-top: 56px;
-    padding-bottom: 68px;
 
 }
 
@@ -1134,6 +1146,30 @@ footer ul li a {
     font-style: normal;
     font-weight: 400;
     color: #A6A6A6;
+}
+
+.container-modification-book .container-main .container-informations form .commentary-container{
+    display: flex;
+    flex-direction: column;
+    white-space: normal;
+    overflow-wrap: break-word;
+    height: auto;
+    padding-left: 14px;
+    padding-right: 12px;
+    padding-bottom: 34px;
+    padding-top: 16px;
+    border-radius: 6px;
+    border: 1px solid #F0F0F0;
+    background: #EDF2F6;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #292929;
+    resize: none;
+    margin-bottom: 32px;
+    margin-top: 10px;
 }
 
 .container-modification-book .container-main .container-informations form input,select{
@@ -1160,6 +1196,7 @@ footer ul li a {
 }
 
 .container-modification-book .container-main .container-informations form .submit-modification{
+    margin:0;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -1169,7 +1206,12 @@ footer ul li a {
     width: 322px;
     height: 63px;
     border-radius: 10px;
+    margin-bottom: 68px;
 }
 
 
 
+.container-modification-book .container-main .container-informations form .submit-modification:hover{
+    background-color: #006D41;
+    cursor: pointer;
+}
