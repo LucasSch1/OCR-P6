@@ -793,6 +793,9 @@ footer ul li a {
     object-position: center top;
 }
 
+.page-private-account .informations-cards .container-left .img-profile-container form input{
+    display: none;
+}
 
 
 /* Conteneur de droite de la page Mon Compte */
@@ -870,56 +873,60 @@ footer ul li a {
 
 /* Partie bibliothèque */
 
-.page-private-account .grid-container .library-user{
+.page-private-account .grid-container .library-user {
     display: flex;
     width: 1140px;
     background-color: #FFF;
     border-radius: 20px !important;
-
+    overflow: hidden;
 }
 
-.page-private-account .grid-container .library-user table{
-    width: auto;
-    table-layout: auto;
+.page-private-account .grid-container .library-user table {
+    width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     text-align: left;
+    margin: 0;
 }
-
 
 .page-private-account .grid-container .library-user thead {
     border-bottom: 1px solid #F5F3EF;
 }
 
-
-.page-private-account .grid-container .library-user th{
+.page-private-account .grid-container .library-user th {
     font-family: 'Inter', sans-serif;
     font-size: 8px;
     font-style: normal;
     font-weight: 600;
     color: #292929;
     letter-spacing: 0.64px;
-}
-
-
-
-.page-private-account .grid-container .library-user th,td{
-    padding-bottom: 8.29px;
-    padding-top: 33.24px;
-    padding-left: 40px;
-    padding-right: 40px;
     text-align: left;
-
+    padding: 20px 0;
 }
 
-.page-private-account .grid-container .library-user td{
+.page-private-account .grid-container .library-user th:first-child,
+.page-private-account .grid-container .library-user td:first-child {
+    padding-left: 52px;
+}
+
+.page-private-account .grid-container .library-user th + th,
+.page-private-account .grid-container .library-user td + td {
+    padding-left: 30px;
+}
+
+.page-private-account .grid-container .library-user th:last-child,
+.page-private-account .grid-container .library-user td:last-child {
+    padding-right: 80px;
+}
+
+.page-private-account .grid-container .library-user th,
+.page-private-account .grid-container .library-user td {
+    padding: 20px;
+    word-wrap: break-word;
+}
+
+.page-private-account .grid-container .library-user td {
     padding-bottom: 33.24px;
-
-}
-
-
-.page-private-account .grid-container .library-user {
-    border-radius: 20px;
-    overflow: hidden;
 }
 
 .page-private-account .grid-container .library-user tr:nth-child(odd) {
@@ -931,13 +938,14 @@ footer ul li a {
 }
 
 
-
-.page-private-account .grid-container .library-user .td-cover img{
+.page-private-account .grid-container .library-user .td-cover img {
     width: 78px;
     height: 78px;
 }
 
-.page-private-account .grid-container .library-user .td-titre{
+.page-private-account .grid-container .library-user .td-titre,
+.page-private-account .grid-container .library-user .td-auteur,
+.page-private-account .grid-container .library-user .td-description {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-style: normal;
@@ -945,90 +953,66 @@ footer ul li a {
     color: #292929;
 }
 
-.page-private-account .grid-container .library-user .td-auteur{
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    color: #292929;
-}
-
-.page-private-account .grid-container .library-user .td-description{
-    width: 128px;
+.page-private-account .grid-container .library-user .td-description {
+    width: 108px;
     height: 62px;
     overflow: hidden;
-    color: #292929;
     text-overflow: ellipsis;
-    font-family: Inter, sans-serif;
-    font-size: 12px;
     font-style: italic;
-    font-weight: 400;
-    line-height: normal;
 }
 
 
-.page-private-account .grid-container .library-user td:nth-child(4), th:nth-child(4) {
-    width: 20%;
+.page-private-account .grid-container .library-user td:nth-child(5),
+.page-private-account .grid-container .library-user th:nth-child(5) {
+    width: 11%;
+}
+
+.page-private-account .grid-container .library-user td:nth-child(6),
+.page-private-account .grid-container .library-user th:nth-child(6) {
+    width: 23%;
 }
 
 
-
-.page-private-account .grid-container .library-user td .edit-button{
-    font-family: Inter, sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    color: #292929;
-    line-height: normal;
-    padding-right: 28px;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-}
-
-.page-private-account .grid-container .library-user td .delete-button{
+.page-private-account .grid-container .library-user td .edit-button {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    font-style: normal;
+    font-weight: 400;
+    color: #292929;
+    text-decoration: underline;
+    padding-right: 28px;
+}
+
+.page-private-account .grid-container .library-user td .delete-button {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
     font-weight: 400;
     color: #CB2D2D;
-    line-height: normal;
+    text-decoration: underline;
     padding-right: 28px;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
 }
 
-.page-private-account .grid-container .library-user td .disponible{
+
+.page-private-account .grid-container .library-user td .disponible,
+.page-private-account .grid-container .library-user td .non-disponible {
     font-family: 'Inter', sans-serif;
     font-size: 9px;
-    font-style: normal;
     font-weight: 500;
     color: #FFFFFF;
     border-radius: 30px;
+    padding: 4px 13px;
+    text-align: center;
+    display: inline-block;
+}
+
+.page-private-account .grid-container .library-user td .disponible {
     background-color: #6DC5A1;
-    padding: 4px 13px;
-    align-items: center;
-    justify-content: center;
 }
 
-.page-private-account .grid-container .library-user td .non-disponible{
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
-    font-style: normal;
-    font-weight: 500;
-    color: #FFFFFF;
-    border-radius: 30px;
+.page-private-account .grid-container .library-user td .non-disponible {
     background-color: #C56D6D;
-    padding: 4px 13px;
-
 }
+
+
 
 
 /* Page modifier les informations du livre */
