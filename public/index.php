@@ -49,6 +49,14 @@ try {
             $bookController = new BookController();
             $bookController->showUpdateBook();
 
+        case 'updateBook':
+            $bookController = new BookController();
+            $bookController->updateBook();
+
+        case 'updateBookPicture':
+            $bookController = new BookController();
+            $bookController->updateBookPicture();
+
 
 
 
