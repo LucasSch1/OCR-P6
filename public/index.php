@@ -27,6 +27,12 @@ try {
             break;
 
 
+        case 'showLibraryBook':
+            $bookController = new BookController();
+            $bookController->showLibraryBook();
+            break;
+
+
         //Pages accessibles pour les personnes connectées
 
         case 'updateUser':
@@ -48,14 +54,24 @@ try {
         case 'showUpdateBook':
             $bookController = new BookController();
             $bookController->showUpdateBook();
+            break;
 
         case 'updateBook':
             $bookController = new BookController();
             $bookController->updateBook();
+            break;
 
         case 'updateBookPicture':
             $bookController = new BookController();
             $bookController->updateBookPicture();
+            break;
+
+
+        case 'deleteBookById':
+            $bookController = new BookController();
+            $bookController->deleteBookById();
+            break;
+
 
 
 
