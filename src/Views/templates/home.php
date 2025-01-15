@@ -24,57 +24,32 @@ session_start();
     <section class="section-two">
         <h2>Les derniers livres ajoutés</h2>
         <div class="container-center">
+                <?php
+            foreach ($lastbooks as $lastbook) {
+            ?>
             <div class="card-container">
                 <div class="card-image">
-                    <img src="<?= BASE_URL; ?>assets/accueil/Mask group-5.png" alt="">
+                <?php if ($lastbook['DISPONIBILITY'] == 0): ?>
+                    <p class="label-non-dispo">non dispo.</p>
+                    <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
+                <?php else: ?>
+                    <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
+                <?php endif; ?>
                 </div>
                 <div class="card-info">
-                    <h3>Esther</h3>
-                    <p>Alabaster</p>
+                    <h3><?= htmlspecialchars($lastbook['TITLE']); ?></h3>
+                    <p><?= htmlspecialchars($lastbook['AUTHOR']); ?></p>
                     <div class="card-vendor">
-                        <p>Vendu par : CamilleClubLit</p>
+                        <p>Vendu par : <?= htmlspecialchars($lastbook['USERNAME_VENDOR']); ?></p>
                     </div>
                 </div>
             </div>
-            <div class="card-container">
-                <div class="card-image">
-                    <img src="<?= BASE_URL; ?>assets/accueil/Mask group-5.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>The Kinfolk Table</h3>
-                    <p>Nathan Williams</p>
-                    <div class="card-vendor">
-                        <p>Vendu par : Nathalire</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="card-image">
-                    <img src="<?= BASE_URL; ?>assets/accueil/Mask group-5.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>Wabi Sabi</h3>
-                    <p>Beth Kempton</p>
-                    <div class="card-vendor">
-                        <p>Vendu par : Alexlecture</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="card-image">
-                    <img src="<?= BASE_URL; ?>assets/accueil/Mask group-5.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>Milk & honey</h3>
-                    <p>Rupi Kaur</p>
-                    <div class="card-vendor">
-                        <p>Vendu par : Hugo1990_12</p>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+                ?>
         </div>
         <div class="btn-more-book">
-            <a href="<?= BASE_URL; ?>login" role="button">Voir tous les livres</a>
+            <a href="index.php?action=showLibraryBook" role="button">Voir tous les livres</a>
         </div>
     </section>
     <section class="section-three">
