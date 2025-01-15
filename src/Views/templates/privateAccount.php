@@ -76,7 +76,7 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
                         </td>
                         <td>
                             <a class="edit-button" href="?action=showUpdateBook&id=<?= $book['ID'] ?>">Éditer</a>
-                            <a class="delete-button" href="">Supprimer</a>
+                            <a class="delete-button" href="?action=deleteBookById&id=<?= $book['ID'] ?>"">Supprimer</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
