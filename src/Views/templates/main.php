@@ -19,7 +19,7 @@
     <nav class="nav-menu">
         <ul class="menu">
             <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php">Accueil</a></li>
-            <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/upload">Nos livres à l'échange</a></li>
+            <li><a href="index.php?action=showLibraryBook">Nos livres à l'échange</a></li>
         </ul>
     </nav>
     <nav class="nav-account">
