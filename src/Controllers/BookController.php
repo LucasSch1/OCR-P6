@@ -25,6 +25,15 @@ class BookController
         $view->render("updatePageBook", ['book' => $book]);
     }
 
+    public function showLibraryBook()
+    {
+        $bookManager = new BookManager();
+        $books = $bookManager->getAllBooks();
+
+        $view = new View('Nos livres à l\'échange');
+        $view->render("libraryBook" ,['books' => $books]);
+    }
+
     public function updateBook(){
         $id = Utils::request("idBookUpdate");
         $titleUpdate = Utils::request("titlebookUpdate");
@@ -33,7 +42,7 @@ class BookController
         $disponibilityUpdate = Utils::request("choice-disponibility");
 
         $bookManager = new BookManager();
-        $book = $bookManager->updateBookById($id , $titleUpdate, $authorUpdate, $commentaryUpdate, $disponibilityUpdate);
+        $bookManager->updateBookById($id , $titleUpdate, $authorUpdate, $commentaryUpdate, $disponibilityUpdate);
 
         Utils::redirect("privateAccountUser");
         exit();
@@ -82,5 +91,16 @@ class BookController
 
         throw new Exception("Aucun fichier téléchargé.");
     }
+    public function deleteBookById(){
+        $id = Utils::request("id");
+        $bookManager = new BookManager();
+        $bookManager->deleteBookById($id);
+
+
+        Utils::redirect("privateAccountUser");
+        exit();
+    }
+
+
 
 }
