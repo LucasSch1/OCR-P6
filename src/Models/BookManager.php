@@ -57,4 +57,53 @@ class BookManager
         }
     }
 
+    public function deleteBookById($id){
+        $db = DBManager::getConnection();
+
+        try {
+            $stmt = $db->prepare("DELETE FROM book WHERE id = :id");
+            $stmt->execute(['id' => $id]);
+        }
+        catch (\PDOException $e) {
+            error_log("Une erreur lors de la suppression du livre est survenue : " . $e->getMessage());
+        }
+
+    }
+
+    public function getAllBooks(){
+        $db = DBManager::getConnection();
+
+        try {
+            $sql = "SELECT book.*, user.username AS USERNAME_VENDOR FROM book INNER JOIN user ON book.ID_USER = user.id;";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $books ?:[];
+        }
+        catch (\PDOException $e) {
+            error_log("Erreur lors de la récupération du livre de l'utilisateur : " . $e->getMessage());
+            return [];
+        }
+
+    }
+
+    public function getLastFourBooks(){
+        $db = DBManager::getConnection();
+
+        try {
+            $sql = "SELECT book.*, user.username AS USERNAME_VENDOR FROM book INNER JOIN user ON book.ID_USER = user.id ORDER BY book.id DESC LIMIT 4;";
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            $lastbooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $lastbooks ?:[];
+        }
+        catch (\PDOException $e) {
+            error_log("Erreur lors de la récupération du livre de l'utilisateur : " . $e->getMessage());
+            return [];
+        }
+
+    }
+
+
+
 }
