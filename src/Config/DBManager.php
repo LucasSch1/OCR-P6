@@ -7,6 +7,7 @@ require_once 'config.php'; // Inclure la configuration
 
 class DBManager {
     private static $connection = null;
+    private static $instance;
 
     public static function getConnection() {
         if (self::$connection === null) {
@@ -22,5 +23,17 @@ class DBManager {
             }
         }
         return self::$connection;
+    }
+
+    /**
+     * Méthode qui permet de récupérer l'instance de la classe DBManager.
+     * @return DBManager
+     */
+    public static function getInstance() : DBManager
+    {
+        if (!self::$instance) {
+            self::$instance = new DBManager();
+        }
+        return self::$instance;
     }
 }
