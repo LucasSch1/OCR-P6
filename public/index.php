@@ -32,6 +32,11 @@ try {
             $bookController->showLibraryBook();
             break;
 
+        case 'showDetailBook':
+            $bookController = new BookController();
+            $bookController->showDetailBook();
+            break;
+
 
         //Pages accessibles pour les personnes connectées
 
