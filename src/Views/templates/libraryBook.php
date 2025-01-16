@@ -25,21 +25,24 @@ session_start();
             foreach ($books as $book) {
             ?>
             <div class="card-container">
-                <div class="card-image">
-                <?php if ($book['DISPONIBILITY'] == 0): ?>
-                    <p class="label-non-dispo">non dispo.</p>
-                    <img src="../<?= $book['COVER']; ?>" alt="<?= htmlspecialchars($book['COVER']); ?>">
-                <?php else: ?>
-                    <img src="../<?= $book['COVER']; ?>" alt="<?= htmlspecialchars($book['COVER']); ?>">
-                <?php endif; ?>
-                </div>
-                <div class="card-info">
-                    <h3><?= htmlspecialchars($book['TITLE']); ?></h3>
-                    <p><?= htmlspecialchars($book['AUTHOR']); ?></p>
-                    <div class="card-vendor">
-                        <p>Vendu par : <?= htmlspecialchars($book['USERNAME_VENDOR']); ?></p>
+                <a class="link-book" href="index.php?action=showDetailBook&idBook=<?=$book['ID']?>">
+                    <div class="card-image">
+                        <?php if ($book['DISPONIBILITY'] == 0): ?>
+                            <p class="label-non-dispo">non dispo.</p>
+                            <img src="../<?= $book['COVER']; ?>" alt="<?= htmlspecialchars($book['COVER']); ?>">
+                        <?php else: ?>
+                            <img src="../<?= $book['COVER']; ?>" alt="<?= htmlspecialchars($book['COVER']); ?>">
+                        <?php endif; ?>
                     </div>
-                </div>
+                    <div class="card-info">
+                        <h3><?= htmlspecialchars($book['TITLE']); ?></h3>
+                        <p><?= htmlspecialchars($book['AUTHOR']); ?></p>
+                        <div class="card-vendor">
+                            <p>Vendu par : <?= htmlspecialchars($book['USERNAME_VENDOR']); ?></p>
+                        </div>
+                    </div>
+                </a>
+
             </div>
             <?php
     }
