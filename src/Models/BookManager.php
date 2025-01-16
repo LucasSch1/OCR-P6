@@ -26,6 +26,38 @@ class BookManager
         }
     }
 
+    public function getBookByIdDetail($id): ?Book
+    {
+        $db = DBManager::getConnection();
+
+        try {
+            $sql = "SELECT book.*, user.username AS USERNAME_VENDOR, user.picture AS USERNAME_PICTURE FROM book INNER JOIN user ON book.ID_USER = user.id WHERE book.ID = :id";
+            $stmt = $db->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            $bookData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($bookData) {
+                // Créez une instance de Book et hydratez-la
+                $book = new Book();
+                $book->setTitle($bookData['TITLE']);
+                $book->setAuthor($bookData['AUTHOR']);
+                $book->setDescription($bookData['DESCRIPTION']);
+                $book->setDisponibility($bookData['DISPONIBILITY']);
+                $book->setCover($bookData['COVER']);
+                $book->setUsername_owner($bookData['USERNAME_VENDOR']);
+                $book->setUsername_picture($bookData['USERNAME_PICTURE']);
+                return $book;
+            }
+
+            return null;
+
+        }
+        catch (\PDOException $e) {
+            error_log("Erreur lors de la récupération du livre : " . $e->getMessage());
+            return [];
+        }
+    }
+
     public function updateBookById($id , $titleUpdate, $authorUpdate, $commentaryUpdate, $disponibilityUpdate){
         $db = DBManager::getConnection();
 
