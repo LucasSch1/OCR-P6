@@ -34,6 +34,15 @@ class BookController
         $view->render("libraryBook" ,['books' => $books]);
     }
 
+    public function showDetailBook(){
+        $id = Utils::request("idBook");
+        $bookManager = new BookManager();
+        $book = $bookManager->getBookByIdDetail($id);
+
+        $view = new View('Single livre');
+        $view->render("detailBook", ['book' => $book]);
+    }
+
     public function updateBook(){
         $id = Utils::request("idBookUpdate");
         $titleUpdate = Utils::request("titlebookUpdate");
