@@ -18,7 +18,7 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
             <div class="container-left">
                 <div class="img-profile-container">
                     <form action="index.php?action=updateUserPicture" method="POST" enctype="multipart/form-data">
-                        <img src="../<?php echo htmlspecialchars($_SESSION['user']['picture']); ?>" class="img-profile" alt="Profile Picture">
+                        <img src="../public/<?php echo htmlspecialchars($_SESSION['user']['picture']); ?>" class="img-profile" alt="Profile Picture">
                         <input type="file" id="profile-picture-upload" name="profile-picture" accept="image/*" onchange="this.form.submit()">
                         <a href="#" class="modify-button" onclick="document.getElementById('profile-picture-upload').click(); return false;">modifier</a>
                     </form>
