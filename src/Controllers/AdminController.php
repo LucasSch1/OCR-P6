@@ -29,6 +29,26 @@ class AdminController
     }
 
 
+    public function showPublicProfile()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $id = Utils::request("id", -1);
+
+        $userManager = new UserManager();
+        $user = $userManager->getUserById($id);
+        $books = $userManager->getBookByUserId($id);
+        $total_books = $userManager->countBooksByUserId($id);
+        $registrationDate = $userManager->getUserRegistrationDate($id);
+        $memberShipDuration = $userManager->getMembershipDuration($registrationDate);
+
+        $view = new View("Compte public");
+        $view->render("publicProfile" , ['user' => $user , 'books' => $books, 'total_books' => $total_books, 'memberShipDuration' => $memberShipDuration]);
+    }
+
+
     public function createUser(){
 
         $username = Utils::request("username");;
@@ -170,6 +190,16 @@ class AdminController
         }
 
         throw new Exception("Aucun fichier téléchargé.");
+    }
+
+
+    public function showMessagerie(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $userId = $_SESSION['user']['id'];
+        $view = new View("Messagerie");
+        $view->render("messageriePage");
     }
 
 
