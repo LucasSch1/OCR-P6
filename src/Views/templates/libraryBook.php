@@ -12,7 +12,7 @@ session_start();
                 <h1>Nos livres à l'échange</h1>
             </div>
             <div class="container-search">
-                <form action="search.php" method="GET">
+                <form action="index.php?action=searchBook" method="GET">
                     <button type="submit">
                         <img src="../public/assets/icon-search.svg">
                     </button>
