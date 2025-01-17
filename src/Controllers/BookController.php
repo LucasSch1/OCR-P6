@@ -35,6 +35,9 @@ class BookController
     }
 
     public function showDetailBook(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $id = Utils::request("idBook");
         $bookManager = new BookManager();
         $book = $bookManager->getBookByIdDetail($id);
@@ -107,6 +110,17 @@ class BookController
 
 
         Utils::redirect("privateAccountUser");
+        exit();
+    }
+
+
+    public function searchBook(){
+        $query = isset($_GET['query']) ? normalize($_GET['query']): '';
+
+        $bookManager = new BookManager();
+        $books=$bookManager->searchBook($query);
+
+        Utils::redirect("showLibraryBook" , ['books' => $books]);
         exit();
     }
 
