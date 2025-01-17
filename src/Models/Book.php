@@ -20,7 +20,18 @@ class Book extends AbstractEntity
 
     private $username_owner;
 
+    private $id_owner;
+
     private $username_picture;
+
+
+    public function setIdOwner($id_owner){
+        $this->id_owner = $id_owner;
+    }
+
+    public function getIdOwner(){
+        return $this->id_owner;
+    }
 
     public function setUsername_owner($username_owner){
         $this->username_owner = $username_owner;
