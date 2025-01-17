@@ -1,6 +1,5 @@
 <?php
 /*Page de détail d'un livre*/
-
 ?>
 
 <section class="page-detail-book">
@@ -23,7 +22,7 @@
             <div class="main-container-owner">
                 <h2>PROPRIÉTAIRE</h2>
                 <div class="container-owner">
-                    <a href="index.php?action">
+                    <a href="index.php?action=showPublicProfile&id=<?= $book->getIdOwner() ?>">
                         <div class="image-container-owner">
                             <img src="../public/<?= $book->getUsername_picture() ?>" alt="<?= $book->getUsername_picture() ?>">
                         </div>
