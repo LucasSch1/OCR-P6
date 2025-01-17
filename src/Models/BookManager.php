@@ -39,6 +39,7 @@ class BookManager
             if ($bookData) {
                 // Créez une instance de Book et hydratez-la
                 $book = new Book();
+                $book->setIdOwner($bookData['ID_USER']);
                 $book->setTitle($bookData['TITLE']);
                 $book->setAuthor($bookData['AUTHOR']);
                 $book->setDescription($bookData['DESCRIPTION']);
@@ -134,6 +135,25 @@ class BookManager
             return [];
         }
 
+    }
+
+    public function searchBook($query)
+    {
+        $db = DBManager::getConnection();
+
+
+        try {
+            $sql = "SELECT * FROM book WHERE book.title LIKE :query;";
+            $stmt = $db->prepare($sql);
+            $stmt->execute(['query' => "%$query%"]);
+            $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $books ?:[];
+
+        }
+        catch (\PDOException $e) {
+            error_log("Erreur lors de la récupération du livre : " . $e->getMessage());
+            return [];
+        }
     }
 
 
