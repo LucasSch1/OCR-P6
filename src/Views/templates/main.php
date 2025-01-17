@@ -24,7 +24,7 @@
     </nav>
     <nav class="nav-account">
         <ul class="menu-account">
-            <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/login">Messagerie</a></li>
+            <li><a href="index.php?action=showMessagerie">Messagerie</a></li>
             <?php
             // Si on est connecté, on affiche le bouton de déconnexion, sinon, on affiche le bouton de connexion :
             if (isset($_SESSION['user'])) {
