@@ -38,6 +38,20 @@ try {
             break;
 
 
+        case 'showPublicProfile':
+            $adminController = new AdminController();
+            $adminController->showPublicProfile();
+            break;
+
+
+        case 'searchBook':
+            $bookController = new BookController();
+            $bookController->searchBook();
+            break;
+
+
+
+
         //Pages accessibles pour les personnes connectées
 
         case 'updateUser':
@@ -75,6 +89,12 @@ try {
         case 'deleteBookById':
             $bookController = new BookController();
             $bookController->deleteBookById();
+            break;
+
+
+        case 'showMessagerie':
+            $adminController = new AdminController();
+            $adminController->showMessagerie();
             break;
 
 
