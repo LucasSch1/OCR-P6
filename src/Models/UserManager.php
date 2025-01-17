@@ -39,6 +39,24 @@ class UserManager
         return null;
     }
 
+    public function getUserById(int $id): ?User
+    {
+        $db = DBManager::getConnection();
+
+        try {
+            $sql = "SELECT * FROM user WHERE id = :id";
+            $stmt = $db->prepare($sql);
+            $stmt->execute(['id' => $id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($user) {
+                return new User($user);
+            }
+        }catch (\PDOException $e) {
+            error_log("Erreur lors de la récupération de l'utilisateur : " . $e->getMessage());
+        }
+        return null;
+    }
+
 
     public function getBookByUserId(int $userId): array{
         $db = DBManager::getConnection();
