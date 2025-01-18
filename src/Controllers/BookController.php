@@ -31,7 +31,7 @@ class BookController
         $books = $bookManager->getAllBooks();
 
         $view = new View('Nos livres à l\'échange');
-        $view->render("libraryBook" ,['books' => $books]);
+        $view->render("libraryBook" ,['books' => $books, 'query' => '']);
     }
 
     public function showDetailBook(){
@@ -114,15 +114,38 @@ class BookController
     }
 
 
+    private function normalize(mixed $query): string
+    {
+        if (!is_string($query) || empty($query)) {
+            return '';
+        }
+        $normalized = strtolower($query);
+
+        $normalized = str_replace(['&', '@', '#', '-', '_'], ' ', $normalized);
+
+        $normalized = iconv('UTF-8', 'ASCII//TRANSLIT', $normalized);
+
+        $normalized = preg_replace('/\s+/', ' ', $normalized);
+
+        return trim($normalized);
+    }
+
     public function searchBook(){
-        $query = isset($_GET['query']) ? normalize($_GET['query']): '';
+        $query = isset($_GET['query']) ? $this->normalize($_GET['query']) : '';
+
+        if (empty($query)) {
+            Utils::redirect("showLibraryBook");
+            exit();
+        }
 
         $bookManager = new BookManager();
         $books=$bookManager->searchBook($query);
 
-        Utils::redirect("showLibraryBook" , ['books' => $books]);
-        exit();
+        $view = new View('Nos livres à l\'échange ');
+        $view->render('libraryBook', ['books' => $books, 'query' => $query]);
     }
+
+
 
 
 
