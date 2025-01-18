@@ -2,8 +2,6 @@
 
 /*Page librairie */
 
-
-session_start();
 ?>
 <section class="container-library">
     <div class="main-container">
@@ -12,11 +10,12 @@ session_start();
                 <h1>Nos livres à l'échange</h1>
             </div>
             <div class="container-search">
-                <form action="index.php?action=searchBook" method="GET">
+                <form action="index.php" method="GET">
+                    <input type="hidden" name="action" value="searchBook">
                     <button type="submit">
                         <img src="../public/assets/icon-search.svg">
                     </button>
-                    <input type="text" name="query" placeholder="Rechercher un livre" required>
+                    <input type="text" name="query" placeholder="Rechercher un livre" value="<?= htmlspecialchars($query) ?>" required>
                 </form>
             </div>
         </div>
@@ -42,7 +41,6 @@ session_start();
                         </div>
                     </div>
                 </a>
-
             </div>
             <?php
     }
