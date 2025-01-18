@@ -141,9 +141,8 @@ class BookManager
     {
         $db = DBManager::getConnection();
 
-
         try {
-            $sql = "SELECT * FROM book WHERE book.title LIKE :query;";
+            $sql = "SELECT book.*, user.USERNAME AS USERNAME_VENDOR FROM book INNER JOIN user ON book.id_user = user.id WHERE book.title LIKE :query;";
             $stmt = $db->prepare($sql);
             $stmt->execute(['query' => "%$query%"]);
             $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
