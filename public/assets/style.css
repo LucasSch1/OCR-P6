@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+
 header {
     min-height: 80px;
     display: flex;
@@ -1311,7 +1312,7 @@ footer ul li a {
 .container-library .main-container .books-grid-container{
     display: flex;
     padding-top: 72px;
-    justify-content: space-between;
+    gap: 38px;
     flex-wrap: wrap;
 }
 
@@ -1611,7 +1612,7 @@ footer ul li a {
 
 .public-profile-page .split-container .library-user{
     display: flex;
-    width: 60%;
+    width: 68%;
 }
 
 .public-profile-page .split-container .container-user-information .image-user-container{
@@ -1784,4 +1785,112 @@ footer ul li a {
 }
 
 
+/*Page messagerie*/
+
+.messagerie-page{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: #F5F3EF;
+    flex: 1;
+    width: 100%;
+}
+
+.messagerie-page .split-container{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+
+.messagerie-page .split-container .users-container{
+    width: 25%;
+    background-color: #FAF9F7;
+    height: 100%;
+}
+
+.messagerie-page .split-container .users-container h1{
+    color: #000;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 34px;
+    padding-right: 143px;
+    padding-top: 55px;
+    padding-bottom: 27px;
+}
+
+
+.messagerie-page .split-container .users-container .item-user-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .image-user-container{
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .image-user-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .user-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 84%;
+}
+
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .user-information .split-container-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .user-information .split-container-user .user-name-container{
+    color: #292929;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.messagerie-page .split-container .users-container .item-user-list .item-user-container .user-information .intro-message-container p{
+    overflow: hidden;
+    color: #A6A6A6;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+.messagerie-page .split-container .conversation-container{
+    width: 79%;
+}
 
