@@ -2,9 +2,6 @@
  /** Page d'accueil */
 ?>
 
-<?php
-session_start();
-?>
 <div class="page">
     <section class="section-one">
         <div class="container-left">
