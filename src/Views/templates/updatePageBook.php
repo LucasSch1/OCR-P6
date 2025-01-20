@@ -5,7 +5,7 @@
 
 use Lucas\OcrP6\Models\BookManager;
 
-session_start();
+
 $bookManager = new BookManager();
 $book = $bookManager->getBookById($_REQUEST['id']);
 $currentDisponibility = $book[0]['DISPONIBILITY'];
