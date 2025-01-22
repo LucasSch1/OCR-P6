@@ -180,7 +180,7 @@ class AdminController
             }
 
             $userManager = new UserManager();
-            $userManager->updateUserPicture($userId, 'assets/profile-images/' . $fileName);
+            $userManager->updateUserPicture($userId, '/public/assets/profile-images/' . $fileName);
 
             $_SESSION['user']['picture'] = '/public/assets/profile-images/' . $fileName;
 
@@ -193,14 +193,8 @@ class AdminController
     }
 
 
-    public function showMessagerie(){
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        $userId = $_SESSION['user']['id'];
-        $view = new View("Messagerie");
-        $view->render("messageriePage");
-    }
+
+    
 
 
 }
