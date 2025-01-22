@@ -12,7 +12,7 @@
                 <?php foreach ($listUsers as $user): ?>
                     <form method="post" action="index.php?action=showMessageByUserId">
                         <input type="hidden" name="user_id" value="<?=$user['id']?>">
-                        <button type="submit" class="item-user-link">
+                        <button type="submit" class="item-user-link <?= ($selectedUserId == $user['id']) ? 'active' : '' ?>">
                             <div class="item-user-container">
                                 <div class="image-user-container">
                                     <img src="..<?= htmlspecialchars($user['picture'] ?: '/public/assets/profile-images/default-profile-image.png') ?>" alt="Photo de <?= htmlspecialchars($user['username']) ?>">
@@ -41,8 +41,6 @@
                             </div>
                         </button>
                     </form>
-                    <a href="conversation.php?user_id=<?= htmlspecialchars($user['id']) ?>" class="item-user-link">
-                    </a>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -85,7 +83,7 @@
             <form class="input-button-container" method="post" action="index.php?action=sendMessage">
                 <input name="content" type="text" placeholder="Tapez votre message ici">
                 <input type="hidden" name="receiver_id" value="<?= htmlspecialchars($selectedUser->getId()) ?>">
-                <a type="submit" >Envoyer</a>
+                <button type="submit" >Envoyer</button>
             </form>
             <?php else: ?>
             <p>Sélectionnez un utilisateur pour commencer une conversation</p>
