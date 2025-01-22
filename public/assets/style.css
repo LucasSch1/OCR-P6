@@ -1941,6 +1941,8 @@ footer ul li a {
 
 .messagerie-page .split-container .conversation-container .user-container .image-user img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -2034,6 +2036,8 @@ footer ul li a {
 
 .messagerie-page .split-container .conversation-container .messages-container .item-message-receiver .container-datetime .image-user-receiver img{
     width: 100%;
+    object-fit: cover;
+    height: 100%;
     border-radius: 100%;
 }
 
