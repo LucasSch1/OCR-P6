@@ -11,6 +11,7 @@ require_once __DIR__ . '/../src/config/config.php';
 use Controllers\AdminController;
 use Controllers\BookController;
 use Controllers\HomeController;
+use Controllers\MessageController;
 use Services\Utils;
 use Views\View;
 
@@ -101,9 +102,22 @@ try {
 
 
         case 'showMessagerie':
-            $adminController = new AdminController();
-            $adminController->showMessagerie();
+            $messageController = new MessageController();
+            $messageController->showMessagerie();
             break;
+
+        case 'showMessageByUserId':
+            $messageController = new MessageController();
+            $messageController->showMessageByUserId();
+            break;
+
+        case 'sendMessage':
+            $messageController = new MessageController();
+            $messageController->sendMessage();
+            break;
+
+
+
 
 
 
