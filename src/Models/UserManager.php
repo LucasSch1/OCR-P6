@@ -151,4 +151,38 @@ class UserManager
     }
 
 
+    public function getUsersFromMessages($userId): array
+    {
+        $db = DBManager::getConnection();
+
+        $query = "
+        SELECT 
+            user.id, 
+            user.username, 
+            user.picture, 
+            message.datetime AS last_message_date, 
+            message.content AS last_message_content
+        FROM user
+        INNER JOIN message
+            ON (user.id = message.id_sender AND message.id_receiver = :userId)
+            OR (user.id = message.id_receiver AND message.id_sender = :userId)
+        ORDER BY message.datetime DESC;
+        ";
+
+
+        $stmt = $db->prepare($query);
+
+        if (!$stmt->execute(['userId' => $userId])) {
+            throw new Exception("Impossible de récupérer la liste des messages.");
+        }
+
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+    }
+
+
 }
