@@ -21,13 +21,24 @@ class MessageController
         }
         $userId = $_SESSION['user']['id'];
 
+        // Vérifiez si un utilisateur est sélectionné via POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
+            $_SESSION['selected_user_id'] = (int)$_POST['user_id'];
+        }
 
         $userManager = new UserManager();
         $listUsers=$userManager->getUsersFromMessages($userId);
 
+        $selectedUserId = $_SESSION['selected_user_id'] ?? null;
+        $selectedUser = null;
+        $messages = [];
+
+        if ($selectedUserId) {
+            $selectedUser = $userManager->getUserById($selectedUserId);
+        }
 
         $view = new View("Messagerie");
-        $view->render('messageriePage',['listUsers' => $listUsers]);
+        $view->render('messageriePage',['listUsers' => $listUsers,'selectedUserId'=>$selectedUserId,'selectedUser'=>$selectedUser,'messages'=>$messages]);
     }
 
 
@@ -42,15 +53,14 @@ class MessageController
         }
 
         $currentUserId = $_SESSION['user']['id'] ?? null;
-
         $selectedUserId = $_SESSION['selected_user_id'] ?? null;
 
 
+
         $userId = $_SESSION['user']['id'];
-
-
         $userManager = new UserManager();
         $listUsers=$userManager->getUsersFromMessages($userId);
+
 
         $messageManager = new MessageManager();
         $messages = $messageManager->getConversation($selectedUserId, $currentUserId);
@@ -64,6 +74,7 @@ class MessageController
             'listUsers' => $listUsers,
             'selectedUser' => $selectedUserId,
             'messages' => $messages,
+            'selectedUserId' => $selectedUserId,
         ]);
 
     }
