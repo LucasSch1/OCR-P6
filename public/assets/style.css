@@ -1599,7 +1599,7 @@ footer ul li a {
 .public-profile-page .split-container{
     display: flex;
     flex-direction: row;
-    width: 1140px;
+    width: 79%;
     height: auto;
     justify-content: space-between;
     padding-bottom: 212px;
@@ -1761,7 +1761,13 @@ footer ul li a {
     text-align: left;
     padding: 20px 0;
 }
+.public-profile-page .split-container .library-user table tr:nth-child(odd){
+    background-color: #FFFFFF;
+}
 
+.public-profile-page .split-container .library-user table tr:nth-child(even){
+    background-color: #EDF2F6;
+}
 
 .public-profile-page .split-container .library-user table th:first-child,
 .public-profile-page .split-container .library-user table td:first-child{
@@ -1773,10 +1779,26 @@ footer ul li a {
     padding-left: 30px;
 }
 
+.public-profile-page .split-container .library-user td{
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    color: #292929;
+}
+
 
 .public-profile-page .split-container .library-user table th:last-child,
 .public-profile-page .split-container .library-user table td:last-child{
     padding-right: 63px;
+}
+
+.public-profile-page .split-container .library-user table td:last-child{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
 }
 
 .public-profile-page .split-container .library-user  .td-cover{
@@ -1786,8 +1808,9 @@ footer ul li a {
 }
 
 .public-profile-page .split-container .library-user  .td-cover img{
-    width: 100%;
-    height: 100%;
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
 }
 
 
@@ -1853,7 +1876,7 @@ footer ul li a {
 }
 
 .messagerie-page .split-container .users-container .item-user-list form .item-user-link.active{
-    background-color: blue;
+    background-color: #FFFFFF;
 }
 
 .messagerie-page .split-container .users-container .item-user-list form .item-user-link:hover{
