@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Exception;
+use Lucas\OcrP6\Models\MessageManager;
 use Lucas\OcrP6\Models\User;
 use Lucas\OcrP6\Models\UserManager;
 use Services\Utils;
@@ -81,9 +82,6 @@ class AdminController
         $user = $userManager->getUserByEmail($email);
 
         if ($user && password_verify($password, $user->getPassword())) {
-            session_start();
-
-
             $_SESSION['user'] = [
                 'id' => $user->getId(),
                 'username' => $user->getUsername(),
@@ -95,6 +93,13 @@ class AdminController
 
             $userId = $_SESSION['user']['id'];
             $books = $userManager->getBookByUserId($userId);
+
+
+            $messageManager = new MessageManager();
+            $_SESSION['unread_messages']= $messageManager->getUnreadMessagesCount($userId);
+
+
+
 
 
 
