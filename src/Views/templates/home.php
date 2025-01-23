@@ -8,7 +8,7 @@
             <h1>Rejoignez nos<br> lecteurs passionnés</h1>
             <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons en la magie du partage de connaissances et d'histoires à travers les livres. </p>
             <div class="btn-container">
-                <a href="<?= BASE_URL; ?>login">Découvrir</a>
+                <a href="index.php?action=showLibraryBook">Découvrir</a>
             </div>
         </div>
         <div class="container-right">
@@ -25,21 +25,23 @@
             foreach ($lastbooks as $lastbook) {
             ?>
             <div class="card-container">
-                <div class="card-image">
-                <?php if ($lastbook['DISPONIBILITY'] == 0): ?>
-                    <p class="label-non-dispo">non dispo.</p>
-                    <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
-                <?php else: ?>
-                    <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
-                <?php endif; ?>
-                </div>
-                <div class="card-info">
-                    <h3><?= htmlspecialchars($lastbook['TITLE']); ?></h3>
-                    <p><?= htmlspecialchars($lastbook['AUTHOR']); ?></p>
-                    <div class="card-vendor">
-                        <p>Vendu par : <?= htmlspecialchars($lastbook['USERNAME_VENDOR']); ?></p>
+                <a class="link-book" href="index.php?action=showDetailBook&idBook=<?=$lastbook['ID']?>">
+                    <div class="card-image">
+                    <?php if ($lastbook['DISPONIBILITY'] == 0): ?>
+                        <p class="label-non-dispo">non dispo.</p>
+                        <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
+                    <?php else: ?>
+                        <img src="../<?= $lastbook['COVER']; ?>" alt="<?= htmlspecialchars($lastbook['COVER']); ?>">
+                    <?php endif; ?>
                     </div>
-                </div>
+                    <div class="card-info">
+                        <h3><?= htmlspecialchars($lastbook['TITLE']); ?></h3>
+                        <p><?= htmlspecialchars($lastbook['AUTHOR']); ?></p>
+                        <div class="card-vendor">
+                            <p>Vendu par : <?= htmlspecialchars($lastbook['USERNAME_VENDOR']); ?></p>
+                        </div>
+                    </div>
+                </a>
             </div>
                 <?php
             }
@@ -69,7 +71,7 @@
             </div>
         </div>
         <div class="btn-more-book">
-            <a href="<?= BASE_URL; ?>login" role="button">Voir tous les livres</a>
+            <a href="index.php?action=showLibraryBook" role="button">Voir tous les livres</a>
         </div>
     </section>
     <section class="section-image">
