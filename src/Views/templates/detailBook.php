@@ -24,9 +24,9 @@
                 <div class="container-owner">
                     <a href="index.php?action=showPublicProfile&id=<?= $book->getIdOwner() ?>">
                         <div class="image-container-owner">
-                            <img src="../public/<?= $book->getUsername_picture() ?>" alt="<?= $book->getUsername_picture() ?>">
+                            <img src="..<?= $book->getUsernamePicture() ?>" alt="<?= $book->getUsernamePicture() ?>">
                         </div>
-                        <p><?= $book->getUsername_owner() ?></p>
+                        <p><?= $book->getUsernameOwner() ?></p>
                     </a>
                 </div>
             </div>
