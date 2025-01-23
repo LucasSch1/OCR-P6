@@ -45,6 +45,9 @@ class Book extends AbstractEntity
         $this->username_picture = $username_picture;
     }
     public function getUsernamePicture(){
+        if (empty($this->username_picture)) {
+            return '/public/assets/profile-images/default-profile-image.png';
+        }
         return $this->username_picture;
     }
 
