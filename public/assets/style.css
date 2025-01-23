@@ -222,6 +222,12 @@ footer ul li a {
     flex-wrap: wrap;
 }
 
+.page .section-two .container-center .card-container a{
+    text-decoration: none;
+    color: black;
+}
+
+
 .card-image{
     width: 200px;
     height: 200px;
@@ -246,6 +252,7 @@ footer ul li a {
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 5px;
+    font-family: 'Inter', sans-serif;
 }
 
 .card-info p {
@@ -973,6 +980,7 @@ footer ul li a {
 .page-private-account .grid-container .library-user .td-cover img {
     width: 78px;
     height: 78px;
+    object-fit: cover;
 }
 
 .page-private-account .grid-container .library-user .td-titre,
@@ -1550,7 +1558,7 @@ footer ul li a {
 
 
 
-.page-detail-book .split-container .informations-container .btn-send-message{
+.page-detail-book .split-container .informations-container .btn-send-message-container .btn-send-message {
     display: flex;
     width: 485px;
     padding: 22px 38px;
@@ -1560,11 +1568,12 @@ footer ul li a {
     border-radius: 10px;
     background: #00AC66;
     margin-top: 80px;
+    border: none;
 
 
 }
 
-.page-detail-book .split-container .informations-container .btn-send-message a{
+.page-detail-book .split-container .informations-container .btn-send-message-container .btn-send-message{
     color: #FFF;
     text-align: center;
     font-family: "Inter" , sans-serif;
@@ -1576,7 +1585,7 @@ footer ul li a {
 }
 
 
-.page-detail-book .split-container .informations-container .btn-send-message:hover{
+.page-detail-book .split-container .informations-container .btn-send-message-container .btn-send-message:hover{
     background-color: #006D41;
     cursor: pointer;
 }
@@ -1702,7 +1711,7 @@ footer ul li a {
     margin-bottom: 56px;
 }
 
-.public-profile-page .split-container .container-user-information .information-user .bouton-container a{
+.public-profile-page .split-container .container-user-information .information-user .bouton-container button{
     display: flex;
     padding: 22px 38px;
     justify-content: center;
@@ -1721,7 +1730,8 @@ footer ul li a {
     line-height: normal;
 }
 
-.public-profile-page .split-container .container-user-information .information-user .bouton-container a:hover{
+
+.public-profile-page .split-container .container-user-information .information-user .bouton-container button:hover{
     background: #006D41;
     cursor: pointer;
     color: #FFFFFF;
