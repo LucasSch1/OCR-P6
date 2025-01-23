@@ -84,7 +84,7 @@
                 <?php endforeach; ?>
             </div>
             <form class="input-button-container" method="post" action="index.php?action=sendMessage">
-                <input name="content" type="text" placeholder="Tapez votre message ici">
+                <input name="content" type="text" placeholder="Tapez votre message ici" required>
                 <input type="hidden" name="receiver_id" value="<?= htmlspecialchars($selectedUser->getId()) ?>">
                 <button type="submit" >Envoyer</button>
             </form>
