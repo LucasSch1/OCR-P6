@@ -1,7 +1,6 @@
 <?php
 /*Compte public */
 
-var_dump($user);
 ?>
 
 <section class="public-profile-page">
@@ -20,7 +19,10 @@ var_dump($user);
                     <p class="book-number-container"><?php echo htmlspecialchars($total_books); ?> livres</p>
                 </div>
                 <div class="bouton-container">
-                    <a href="">Écrire un message</a>
+                    <form action="index.php?action=showMessageByUserId" method="POST">
+                        <input type="hidden" name="user_id" value="<?= $user->getId()?>">
+                        <button type="submit" class="btn-send-message">Envoyer un message</button>
+                    </form>
                 </div>
             </div>
         </div>
