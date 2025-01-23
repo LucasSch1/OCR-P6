@@ -1,5 +1,6 @@
 <?php
 /* Page de messagerie*/
+
 ?>
 
 
@@ -12,7 +13,7 @@
                 <?php foreach ($listUsers as $user): ?>
                     <form method="post" action="index.php?action=showMessageByUserId">
                         <input type="hidden" name="user_id" value="<?=$user['id']?>">
-                        <button type="submit" class="item-user-link <?= ($selectedUserId == $user['id']) ? 'active' : '' ?>">
+                        <button type="submit" class="item-user-link <?= ($selectedUserIdValue === $user['id']) ? 'active' : '' ?>">
                             <div class="item-user-container">
                                 <div class="image-user-container">
                                     <img src="..<?= htmlspecialchars($user['picture'] ?: '/public/assets/profile-images/default-profile-image.png') ?>" alt="Photo de <?= htmlspecialchars($user['username']) ?>">
@@ -26,7 +27,9 @@
                                             <?php
                                             $lastMessageDate = strtotime($user['last_message_date']);
                                             $now = time();
-                                            if (($now - $lastMessageDate) > 86400):
+                                            $currentDate = date("Y-m-d",$now);
+                                            $messageDate = date("Y-m-d",$lastMessageDate);
+                                            if ($currentDate != $messageDate):
                                                 echo htmlspecialchars(date('d.m', $lastMessageDate));
                                             else:
                                                 echo htmlspecialchars(date('H:i', $lastMessageDate));
