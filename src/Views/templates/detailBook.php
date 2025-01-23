@@ -30,8 +30,11 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-send-message">
-                <a href="index.php?action=showMessagerie" role="button">Envoyer un message</a>
+            <div class="btn-send-message-container">
+                <form action="index.php?action=showMessageByUserId" method="POST">
+                    <input type="hidden" name="user_id" value="<?= $book->getIdOwner()?>">
+                    <button type="submit" class="btn-send-message">Envoyer un message</button>
+                </form>
             </div>
         </div>
     </div>
