@@ -5,6 +5,7 @@ namespace Controllers;
 use Exception;
 use Lucas\OcrP6\Config\DBManager;
 use Lucas\OcrP6\Models\MessageManager;
+use Lucas\OcrP6\Models\User;
 use Lucas\OcrP6\Models\UserManager;
 use Services\Utils;
 use Views\View;
@@ -31,14 +32,18 @@ class MessageController
 
         $selectedUserId = $_SESSION['selected_user_id'] ?? null;
         $selectedUser = null;
+        $selectedUserIdValue = null;
         $messages = [];
 
         if ($selectedUserId) {
             $selectedUser = $userManager->getUserById($selectedUserId);
         }
 
+
+
+
         $view = new View("Messagerie");
-        $view->render('messageriePage',['listUsers' => $listUsers,'selectedUserId'=>$selectedUserId,'selectedUser'=>$selectedUser,'messages'=>$messages]);
+        $view->render('messageriePage',['listUsers' => $listUsers,'selectedUserIdValue'=>$selectedUserIdValue,'selectedUser'=>$selectedUser,'messages'=>$messages]);
     }
 
 
@@ -69,12 +74,26 @@ class MessageController
         $userManager = new UserManager();
         $selectedUserId = $userManager->getUserById($selectedUserId);
 
+        $selectedUserIdValue = null;
+
+        // Vérifiez si $selectedUserId est défini
+        if (isset($selectedUserId)) {
+            if ($selectedUserId instanceof \Lucas\OcrP6\Models\User) {
+                // Extraire l'ID de l'objet
+                $selectedUserIdValue = (int)$selectedUserId->getId();
+            } else {
+                // Si ce n'est pas un objet, traiter comme une chaîne/int
+                $selectedUserIdValue = (int)$selectedUserId;
+            }
+        }
+
         $view = new View("Messagerie");
         $view->render('messageriePage', [
             'listUsers' => $listUsers,
             'selectedUser' => $selectedUserId,
             'messages' => $messages,
             'selectedUserId' => $selectedUserId,
+            'selectedUserIdValue' => $selectedUserIdValue,
         ]);
 
     }
