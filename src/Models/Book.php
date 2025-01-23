@@ -33,18 +33,18 @@ class Book extends AbstractEntity
         return $this->id_owner;
     }
 
-    public function setUsername_owner($username_owner){
+    public function setUsernameOwner($username_owner){
         $this->username_owner = $username_owner;
     }
 
-    public function getUsername_owner(){
+    public function getUsernameOwner(){
         return $this->username_owner;
     }
 
-    public function setUsername_picture($username_picture){
+    public function setUsernamePicture($username_picture){
         $this->username_picture = $username_picture;
     }
-    public function getUsername_picture(){
+    public function getUsernamePicture(){
         return $this->username_picture;
     }
 
