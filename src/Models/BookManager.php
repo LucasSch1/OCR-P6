@@ -45,8 +45,8 @@ class BookManager
                 $book->setDescription($bookData['DESCRIPTION']);
                 $book->setDisponibility($bookData['DISPONIBILITY']);
                 $book->setCover($bookData['COVER']);
-                $book->setUsername_owner($bookData['USERNAME_VENDOR']);
-                $book->setUsername_picture($bookData['USERNAME_PICTURE']);
+                $book->setUsernameOwner($bookData['USERNAME_VENDOR']);
+                $book->setUsernamePicture($bookData['USERNAME_PICTURE']);
                 return $book;
             }
 
