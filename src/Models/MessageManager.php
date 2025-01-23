@@ -44,4 +44,22 @@ class MessageManager
         }, $messages);
     }
 
+
+    function getUnreadMessagesCount($userId) {
+        $db = DBManager::getConnection();
+        $sql = "SELECT COUNT(*) AS unread_count 
+            FROM message 
+            WHERE id_receiver = :user_id AND is_read = 0";
+
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $unreadCount=$result['unread_count'] ?? 0;
+
+        return $unreadCount;
+
+    }
+
 }
