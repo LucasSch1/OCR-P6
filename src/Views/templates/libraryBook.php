@@ -1,7 +1,5 @@
 <?php
-
 /*Page librairie */
-var_dump($_SESSION);
 ?>
 <section class="container-library">
     <div class="main-container">
