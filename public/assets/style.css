@@ -35,10 +35,24 @@ header ul {
 
 /* Remove line on the a */
 header ul li a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: black;
+    color: #292929;
+    font-family: "Inter",sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    gap: 4px;
+
 }
 
+
+.active a {
+    font-weight: bold;
+}
 
 
 /* Premier menu */
@@ -63,6 +77,13 @@ header ul li a {
 .nav-account .menu-account li {
     display: flex;
     padding: 10px 20px;
+}
+
+.nav-account .menu-account li a span{
+    padding: 3px;
+    background-color: #292929;
+    border-radius: 7px;
+    color: #F5F3EF;
 }
 
 
@@ -1320,7 +1341,8 @@ footer ul li a {
     border: none;
     border-radius: 6px;
     background: #FFF;
-    overflow: hidden
+    overflow: hidden;
+    padding: 5px;
 }
 
 .container-library .main-container .books-grid-container{
