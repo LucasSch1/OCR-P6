@@ -25,17 +25,19 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
 </head>
 <body>
 <header>
-    <div class="logo">
-        <a href="index.php?action=home">
-            <img src="http://localhost/OCR-P6/OCR-P6/public/assets/logo-header.svg" alt="Logo">
-        </a>
+    <div class="container-logo-menu">
+        <div class="logo">
+            <a href="index.php?action=home">
+                <img src="http://localhost/OCR-P6/OCR-P6/public/assets/logo-header.svg" alt="Logo">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li class="<?php echo isActive('home'); ?>""><a href="index.php?action=home">Accueil</a></li>
+                <li class="<?php echo isActive('showLibraryBook'); ?>"><a href="index.php?action=showLibraryBook">Nos livres à l'échange</a></li>
+            </ul>
+        </nav>
     </div>
-    <nav class="nav-menu">
-        <ul class="menu">
-            <li class="<?php echo isActive('home'); ?>""><a href="index.php?action=home">Accueil</a></li>
-            <li class="<?php echo isActive('showLibraryBook'); ?>"><a href="index.php?action=showLibraryBook">Nos livres à l'échange</a></li>
-        </ul>
-    </nav>
     <nav class="nav-account">
         <ul class="menu-account">
             <li class="<?php echo isActive('showMessagerie'); ?>"><a href="index.php?action=showMessagerie">
