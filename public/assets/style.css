@@ -28,12 +28,22 @@ header {
 
 }
 
-/* Remove puce */
+header .container-logo-menu{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+header .container-logo-menu .nav-menu{
+    margin-left: 78px;
+}
+
+
 header ul {
     list-style: none;
 }
 
-/* Remove line on the a */
+
 header ul li a {
     display: flex;
     align-items: center;
@@ -475,7 +485,7 @@ footer ul li a {
 
 
 .section-four .container-end{
-    width: 399px;
+    width: 100%;
     display: flex;
 
 }
@@ -486,12 +496,14 @@ footer ul li a {
     font-style: italic;
     color: #A6A6A6;
     display: flex;
+    padding-left: 39.8%;
 }
 
 
 .section-four .container-end .second-container{
     width: 120px;
     height: 102px;
+    margin-left: 239px;
 }
 
 .section-four .container-end .second-container img{
@@ -556,6 +568,10 @@ footer ul li a {
     flex-direction: column;
     width: 322px;
 }
+.container-connection .container-left .container-form .error{
+    color :red;
+}
+
 
 .container-connection  .submit-connection{
     background-color: #00AC66;
@@ -656,6 +672,10 @@ footer ul li a {
     display: flex;
     flex-direction: column;
     width: 322px;
+}
+
+.container-registration .container-left .container-form .error{
+    color: red;
 }
 
 .container-registration  .submit-registration{
@@ -1394,15 +1414,28 @@ footer ul li a {
     width: 100%;
     flex-direction: column;
     height: calc(100vh - 80px - 61px);
-    box-sizing: border-box; /* Inclut les bordures et padding dans le calcul */
-    overflow: hidden; /* Empêche le débordement */
-    background: #FAF9F7;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.page-detail-book .ariane-fil{
+    color: #A6A6A6;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-left: 13.5%;
+    padding-bottom: 16px;
+    background-color: #F5F3EF;
 }
 
 .page-detail-book .split-container {
     display: flex;
     flex-direction: row;
     flex: 1;
+    background: #FAF9F7;
 }
 
 .page-detail-book .split-container .image-container,
@@ -1624,6 +1657,7 @@ footer ul li a {
     position: relative;
     width: 100%;
     flex: 1;
+    height: calc(100vh - 80px - 61px);
 
 }
 
@@ -2221,4 +2255,72 @@ footer ul li a {
     line-height: normal;
     text-decoration: none;
     border: none;
+}
+
+/*Page d'erreur */
+
+.error-page{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-color: #F5F3EF;
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - 80px - 61px);
+}
+
+.error-page .main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.error-page .main-container .main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-page .main-container .main-content .error-text-image h1{
+    font-size: 82px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #00AC66;
+}
+
+.error-page .main-container .main-content .error-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.error-page .main-container .main-content .error-message .text-main, .subtext-main{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #292929;
+}
+
+.error-page .main-container .main-content .btn-accueil{
+    padding: 22px 38px;
+    border-radius: 10px;
+    background: #00AC66;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.error-page .main-container .main-content .btn-accueil:hover{
+    background: #006D41;
 }
