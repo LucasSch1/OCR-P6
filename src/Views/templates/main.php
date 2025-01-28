@@ -16,7 +16,7 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
         </div>
         <nav class="nav-menu">
             <ul class="menu">
-                <li class="<?php echo isActive('home'); ?>""><a href="index.php?action=home">Accueil</a></li>
+                <li class="<?php echo isActive('home'); ?>"><a href="index.php?action=home">Accueil</a></li>
                 <li class="<?php echo isActive('showLibraryBook'); ?>"><a href="index.php?action=showLibraryBook">Nos livres à l'échange</a></li>
             </ul>
         </nav>
