@@ -11,9 +11,9 @@
                 <form action="index.php" method="GET">
                     <input type="hidden" name="action" value="searchBook">
                     <button type="submit">
-                        <img src="../public/assets/icon-search.svg">
+                        <img src="../public/assets/icon-search.svg" alt="Icone de recherche">
                     </button>
-                    <input type="text" name="query" placeholder="Rechercher un livre" value="<?= htmlspecialchars($query) ?>" required>
+                    <input type="text" name="query" aria-label="Rechercher un livre" placeholder="Rechercher un livre" value="<?= htmlspecialchars($query) ?>" required>
                 </form>
             </div>
         </div>
