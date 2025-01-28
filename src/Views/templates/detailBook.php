@@ -3,6 +3,9 @@
 ?>
 
 <section class="page-detail-book">
+    <div class="ariane-fil">
+        <p>Nos livres ><?= $book->getTitle() ?></p>
+    </div>
     <div class="split-container">
         <div class="image-container">
             <img src="../<?= $book->getCover() ?>">
@@ -30,12 +33,14 @@
                     </a>
                 </div>
             </div>
-            <div class="btn-send-message-container">
-                <form action="index.php?action=showMessageByUserId" method="POST">
-                    <input type="hidden" name="user_id" value="<?= $book->getIdOwner()?>">
-                    <button type="submit" class="btn-send-message">Envoyer un message</button>
-                </form>
-            </div>
+            <?php if ($connectedUserId !== $book->getIdOwner()): ?>
+                <div class="btn-send-message-container">
+                    <form action="index.php?action=showMessageByUserId" method="POST">
+                        <input type="hidden" name="user_id" value="<?= $book->getIdOwner() ?>">
+                        <button type="submit" class="btn-send-message">Envoyer un message</button>
+                    </form>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
