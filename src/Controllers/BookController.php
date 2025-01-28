@@ -42,8 +42,14 @@ class BookController
         $bookManager = new BookManager();
         $book = $bookManager->getBookByIdDetail($id);
 
+        if(isset($_SESSION['user'])){
+            $connectedUserId = $_SESSION['user']['id'];
+        }else{
+            $connectedUserId = null;
+        }
+
         $view = new View('Single livre');
-        $view->render("detailBook", ['book' => $book]);
+        $view->render("detailBook", ['book' => $book,'connectedUserId' => $connectedUserId]);
     }
 
     public function updateBook(){
