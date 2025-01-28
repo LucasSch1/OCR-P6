@@ -153,6 +153,8 @@ try {
             $adminController->disconnectUser();
             break;
 
+        default:
+            throw new Exception("Action non reconnue : $action");
     }
 } catch (Exception $e) {
     // En cas d'erreur, on affiche la page d'erreur.
