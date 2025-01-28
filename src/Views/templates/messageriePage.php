@@ -13,7 +13,7 @@
                 <?php foreach ($listUsers as $user): ?>
                     <form method="post" action="index.php?action=showMessageByUserId">
                         <input type="hidden" name="user_id" value="<?=$user['id']?>">
-                        <button type="submit" class="item-user-link <?= ($selectedUserIdValue === $user['id']) ? 'active' : '' ?>">
+                        <div class="item-user-link <?= ($selectedUserIdValue === $user['id']) ? 'active' : '' ?>" onclick="this.closest('form').submit();">
                             <div class="item-user-container">
                                 <div class="image-user-container">
                                     <img src="..<?= htmlspecialchars($user['picture'] ?: '/public/assets/profile-images/default-profile-image.png') ?>" alt="Photo de <?= htmlspecialchars($user['username']) ?>">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </button>
+                        </div>
                     </form>
                 <?php endforeach; ?>
             </div>
@@ -84,7 +84,7 @@
                 <?php endforeach; ?>
             </div>
             <form class="input-button-container" method="post" action="index.php?action=sendMessage">
-                <input name="content" type="text" placeholder="Tapez votre message ici" required>
+                <input name="content" type="text" aria-label="Tapez votre message ici" placeholder="Tapez votre message ici" required>
                 <input type="hidden" name="receiver_id" value="<?= htmlspecialchars($selectedUser->getId()) ?>">
                 <button type="submit" >Envoyer</button>
             </form>
