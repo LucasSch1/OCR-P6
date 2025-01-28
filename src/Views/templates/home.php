@@ -13,7 +13,7 @@
         </div>
         <div class="container-right">
             <figure>
-                <img src="<?= BASE_URL; ?>assets/accueil/image-first-section-accueil.png" alt="">
+                <img src="<?= BASE_URL; ?>assets/accueil/image-first-section-accueil.png" alt="Image représentant un homme lisant un livre">
                 <figcaption>Hamza</figcaption>
             </figure>
         </div>
@@ -76,7 +76,7 @@
     </section>
     <section class="section-image">
         <div class="container-image">
-            <img src="<?= BASE_URL; ?>assets/accueil/Mask group.png" alt="">
+            <img src="<?= BASE_URL; ?>assets/accueil/Mask-group.png" alt="Image d'une femme cherchant un livre dans une bibliothèque">
         </div>
     </section>
     <section class="section-four">
@@ -101,7 +101,7 @@
                 </p>
             </div>
             <div class="second-container">
-                <img src="<?= BASE_URL; ?>assets/accueil/Vector 2@2x.png" alt="">
+                <img src="<?= BASE_URL; ?>assets/accueil/Vector-2@2x.png" alt="Vecteur en forme de coeur de couleur vert">
             </div>
         </div>
 
