@@ -18,7 +18,7 @@ class MessageController
         }
 
         if (!isset($_SESSION['user']) || !isset($_SESSION['user']['id'])) {
-            throw new Exception("Utilisateur non connecté.");
+            Utils::redirect("connectionForm");
         }
         $userId = $_SESSION['user']['id'];
 
@@ -53,6 +53,10 @@ class MessageController
             session_start();
         }
 
+        if (!isset($_SESSION['user']) || !isset($_SESSION['user']['id'])) {
+            Utils::redirect("connectionForm");
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
             $_SESSION['selected_user_id'] = $_POST['user_id'];
         }
@@ -76,13 +80,11 @@ class MessageController
 
         $selectedUserIdValue = null;
 
-        // Vérifiez si $selectedUserId est défini
+
         if (isset($selectedUserId)) {
             if ($selectedUserId instanceof \Lucas\OcrP6\Models\User) {
-                // Extraire l'ID de l'objet
                 $selectedUserIdValue = (int)$selectedUserId->getId();
             } else {
-                // Si ce n'est pas un objet, traiter comme une chaîne/int
                 $selectedUserIdValue = (int)$selectedUserId;
             }
         }
