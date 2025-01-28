@@ -8,7 +8,7 @@
     </div>
     <div class="split-container">
         <div class="image-container">
-            <img src="../<?= $book->getCover() ?>">
+            <img src="../<?= $book->getCover() ?>" alt="Image représentant un livre">
         </div>
         <div class="informations-container">
             <div class="title-author-container">
@@ -19,6 +19,7 @@
             <div class="main-container-description">
                 <h2>DESCRIPTION</h2>
                 <div class="container-description">
+<!--                    Insère un retour à la ligne à chaque nouvelle ligne.-->
                     <?=  nl2br($book->getDescription()) ?>
                 </div>
             </div>
