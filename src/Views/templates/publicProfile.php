@@ -18,12 +18,14 @@
                     <img src="../public/assets/icon_book.svg" class="icon-container">
                     <p class="book-number-container"><?php echo htmlspecialchars($total_books); ?> livres</p>
                 </div>
-                <div class="bouton-container">
-                    <form action="index.php?action=showMessageByUserId" method="POST">
-                        <input type="hidden" name="user_id" value="<?= $user->getId()?>">
-                        <button type="submit" class="btn-send-message">Envoyer un message</button>
-                    </form>
-                </div>
+                <?php if ($connectedUserId !== $user->getId()): ?>
+                    <div class="bouton-container">
+                        <form action="index.php?action=showMessageByUserId" method="POST">
+                            <input type="hidden" name="user_id" value="<?= $user->getId()?>">
+                            <button type="submit" class="btn-send-message">Envoyer un message</button>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="library-user">
