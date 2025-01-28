@@ -111,7 +111,6 @@ class MessageController
             $senderId = $_SESSION['user']['id'];
             $receiverId = $_POST['receiver_id'];
             $content = $_POST['content'];
-            $content_filter = htmlspecialchars($content, ENT_QUOTES, 'UTF-8');
             $datetime = date('Y-m-d H:i:s');
 
             $query = "INSERT INTO message (id_sender, id_receiver, content, datetime) VALUES (:sender, :receiver, :content, :datetime)";
@@ -120,7 +119,7 @@ class MessageController
             $stmt->execute([
                 'sender' => $senderId,
                 'receiver' => $receiverId,
-                'content' => $content_filter,
+                'content' => $content,
                 'datetime' => $datetime
             ]);
 
