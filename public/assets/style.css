@@ -112,7 +112,12 @@ footer ul{
 /* Remove line on the a */
 footer ul li a {
     text-decoration: none;
-    color: black;
+    color: #292929;
+    font-family: "Inter",sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .nav-footer .menu-footer ul {
@@ -1436,12 +1441,12 @@ footer ul li a {
     flex-direction: row;
     flex: 1;
     background: #FAF9F7;
+    height: 100%;
 }
 
 .page-detail-book .split-container .image-container,
 .page-detail-book .split-container .informations-container {
     width: 50%;
-    height: 100%;
 }
 
 .page-detail-book .split-container .image-container {
@@ -1454,9 +1459,8 @@ footer ul li a {
 
 .page-detail-book .split-container .image-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .page-detail-book .split-container .informations-container {
