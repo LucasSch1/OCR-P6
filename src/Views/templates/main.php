@@ -75,9 +75,9 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
     <nav class="nav-footer">
         <div class="menu-footer">
             <ul>
-                <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/login">Politique de confidentialité</a></li>
-                <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/logout">Mention légales</a></li>
-                <li><a href="http://localhost/OCR-P6/OCR-P6/public/index.php/logout">Tom Troc&copy;</a></li>
+                <li><a href="">Politique de confidentialité</a></li>
+                <li><a href="">Mention légales</a></li>
+                <li><a href="">Tom Troc&copy;</a></li>
             </ul>
             <div class="logo-footer">
                 <img src="http://localhost/OCR-P6/OCR-P6/public/assets/logo-footer.svg" alt="Logo">
