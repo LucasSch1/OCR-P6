@@ -45,71 +45,81 @@ class AdminController
         $registrationDate = $userManager->getUserRegistrationDate($id);
         $memberShipDuration = $userManager->getMembershipDuration($registrationDate);
 
+        if(isset($_SESSION['user'])){
+            $connectedUserId = $_SESSION['user']['id'];
+        }else{
+            $connectedUserId = null;
+        }
+
         $view = new View("Compte public");
-        $view->render("publicProfile" , ['user' => $user , 'books' => $books, 'total_books' => $total_books, 'memberShipDuration' => $memberShipDuration]);
+        $view->render("publicProfile" , ['user' => $user , 'books' => $books, 'total_books' => $total_books, 'memberShipDuration' => $memberShipDuration, 'connectedUserId' => $connectedUserId]);
     }
 
 
     public function createUser(){
 
-        $username = Utils::request("username");;
-        $email = Utils::request("email");;
-        $password = Utils::request("password");
+        try {
+            $username = Utils::request("username");;
+            $email = Utils::request("email");;
+            $password = Utils::request("password");
 
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-
-        if (empty($username) || empty($password) || empty($email)) {
-            throw new Exception("Tous les champs sont obligatoires. 1");
-        }
-
-        $userManager = new UserManager();
-        $userManager->createUser($email, $passwordHash, $username);
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 
-        Utils::redirect("home");
-    }
+            if (empty($username) || empty($password) || empty($email)) {
+                throw new Exception("Tous les champs sont obligatoires. 1");
+            }
 
-    public function connectUser() {
-        $email = Utils::request("email");
-        $password = Utils::request("password");
-
-        if (empty($email) || empty($password)) {
-            throw new \Exception("Tous les champs sont obligatoires.");
-        }
-
-        $userManager = new UserManager();
-        $user = $userManager->getUserByEmail($email);
-
-        if ($user && password_verify($password, $user->getPassword())) {
-            $_SESSION['user'] = [
-                'id' => $user->getId(),
-                'username' => $user->getUsername(),
-                'email' => $user->getEmail(),
-                'date_created' => $user->getDateCreated(),
-                'picture' => $user->getPicture()
-            ];
-
-
-            $userId = $_SESSION['user']['id'];
-            $books = $userManager->getBookByUserId($userId);
-
-
-            $messageManager = new MessageManager();
-            $_SESSION['unread_messages']= $messageManager->getUnreadMessagesCount($userId);
-
-
-
-
+            $userManager = new UserManager();
+            $userManager->createUser($email, $passwordHash, $username);
 
 
             Utils::redirect("home");
-            exit();
-        } else {
+        }catch(Exception $e){
+            $error = $e->getMessage();
+            $view = new View("Inscription");
+            $view->render("registerForm", ['error' => $error]);
+        }
 
-            throw new \Exception("Email ou mot de passe incorrect.");
+    }
+
+    public function connectUser() {
+        try {
+            $email = Utils::request("email");
+            $password = Utils::request("password");
+
+            if (empty($email) || empty($password)) {
+                throw new \Exception("Tous les champs sont obligatoires.");
+            }
+
+            $userManager = new UserManager();
+            $user = $userManager->getUserByEmail($email);
+
+            if ($user && password_verify($password, $user->getPassword())) {
+                $_SESSION['user'] = [
+                    'id' => $user->getId(),
+                    'username' => $user->getUsername(),
+                    'email' => $user->getEmail(),
+                    'date_created' => $user->getDateCreated(),
+                    'picture' => $user->getPicture()
+                ];
+
+                $userId = $_SESSION['user']['id'];
+                $messageManager = new MessageManager();
+                $_SESSION['unread_messages'] = $messageManager->getUnreadMessagesCount($userId);
+
+                Utils::redirect("home");
+                exit();
+            } else {
+                throw new \Exception("Email ou mot de passe incorrect.");
+            }
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            $view = new View("Connexion");
+            $view->render("connectionForm", ['error' => $error]);
         }
     }
+
 
     public function disconnectUser(): void
     {
