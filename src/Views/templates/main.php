@@ -28,7 +28,7 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
     <div class="container-logo-menu">
         <div class="logo">
             <a href="index.php?action=home">
-                <img src="http://localhost/OCR-P6/OCR-P6/public/assets/logo-header.svg" alt="Logo">
+                <img src="../public/assets/logo-header.svg" alt="Logo">
             </a>
         </div>
         <nav class="nav-menu">
@@ -80,7 +80,7 @@ $unread_messages = $is_logged_in ? $_SESSION['unread_messages'] : 0;
                 <li><a href="">Tom Troc&copy;</a></li>
             </ul>
             <div class="logo-footer">
-                <img src="http://localhost/OCR-P6/OCR-P6/public/assets/logo-footer.svg" alt="Logo">
+                <img src="../public/assets/logo-footer.svg" alt="Logo">
             </div>
         </div>
     </nav>
