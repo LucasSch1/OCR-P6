@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba90d940-314f-4d36-8a37-99b485d80190" name="Changes" comment="Image de profil des utilisateurs" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LucasSch1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LucasSch1/OCR-P6.git&quot;,
+    &quot;accountId&quot;: &quot;8cf121b3-2c4b-45c9-8490-4884bb20cb1e&quot;
+  }
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2q7SdYiTm3TquC3hBVJIG9QEoyy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/xampp/htdocs/OCR-P6",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\OCR-P6\OCR-P6\public\assets" />
+      <recent name="C:\xampp\htdocs\OCR-P6\OCR-P6\public\assets\profile-images" />
+      <recent name="C:\xampp\htdocs\OCR-P6\OCR-P6\public\book-images" />
+      <recent name="C:\xampp\htdocs\OCR-P6\OCR-P6\public\assets\accueil" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.233" />
+        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.233" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="PHP" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba90d940-314f-4d36-8a37-99b485d80190" name="Changes" comment="" />
+      <created>1734012208640</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734012208640</updated>
+      <workItem from="1734012209759" duration="3581000" />
+      <workItem from="1734166407488" duration="2296000" />
+      <workItem from="1734179710370" duration="2579000" />
+      <workItem from="1734182300287" duration="4332000" />
+      <workItem from="1734187623507" duration="5000" />
+      <workItem from="1734280976985" duration="1957000" />
+      <workItem from="1734440381636" duration="3639000" />
+      <workItem from="1734513505590" duration="8794000" />
+      <workItem from="1734602340762" duration="11228000" />
+      <workItem from="1734630214522" duration="48000" />
+      <workItem from="1734685538964" duration="11141000" />
+      <workItem from="1734857171301" duration="4531000" />
+      <workItem from="1735981820823" duration="7340000" />
+      <workItem from="1736066055254" duration="1197000" />
+      <workItem from="1736095604779" duration="2951000" />
+      <workItem from="1736154199355" duration="16947000" />
+      <workItem from="1736239197795" duration="14068000" />
+      <workItem from="1736325932549" duration="11740000" />
+      <workItem from="1736411736650" duration="13277000" />
+      <workItem from="1736431574777" duration="986000" />
+      <workItem from="1736497472665" duration="9636000" />
+      <workItem from="1736514756026" duration="3804000" />
+      <workItem from="1736610342751" duration="1082000" />
+      <workItem from="1736674076849" duration="7455000" />
+      <workItem from="1736701986949" duration="1221000" />
+      <workItem from="1736703504752" duration="599000" />
+      <workItem from="1736757009865" duration="11464000" />
+      <workItem from="1736844188304" duration="728000" />
+      <workItem from="1736844937285" duration="18779000" />
+      <workItem from="1736930671814" duration="14919000" />
+      <workItem from="1737016132445" duration="15765000" />
+      <workItem from="1737042896562" duration="605000" />
+      <workItem from="1737102414080" duration="16196000" />
+      <workItem from="1737130840798" duration="619000" />
+      <workItem from="1737192788949" duration="7564000" />
+      <workItem from="1737209322069" duration="1205000" />
+      <workItem from="1737277140172" duration="3807000" />
+      <workItem from="1737363837114" duration="11252000" />
+      <workItem from="1737448038578" duration="15156000" />
+      <workItem from="1737475642309" duration="646000" />
+      <workItem from="1737535164310" duration="17665000" />
+      <workItem from="1737621082564" duration="18686000" />
+      <workItem from="1737795395502" duration="1189000" />
+      <workItem from="1737882432528" duration="2373000" />
+      <workItem from="1737910838340" duration="1298000" />
+      <workItem from="1737966930792" duration="2228000" />
+      <workItem from="1738055009777" duration="21015000" />
+      <workItem from="1738141616186" duration="1812000" />
+    </task>
+    <task id="LOCAL-00171" summary="Modification du chemin de l'image du propriétaire dans la pasge de détail du livre">
+      <option name="closed" value="true" />
+      <created>1737627598986</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1737627598986</updated>
+    </task>
+    <task id="LOCAL-00172" summary="Ajout de l'utilisateur sélectionner dans la page de messagerie">
+      <option name="closed" value="true" />
+      <created>1737627632379</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1737627632379</updated>
+    </task>
+    <task id="LOCAL-00173" summary="Modification de l'affichage de l'heure du dernier message">
+      <option name="closed" value="true" />
+      <created>1737627672335</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1737627672335</updated>
+    </task>
+    <task id="LOCAL-00174" summary="Modification du chemin de l'image">
+      <option name="closed" value="true" />
+      <created>1737627686518</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1737627686518</updated>
+    </task>
+    <task id="LOCAL-00175" summary="Modification du css">
+      <option name="closed" value="true" />
+      <created>1737627693808</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1737627693808</updated>
+    </task>
+    <task id="LOCAL-00176" summary="Ajout des messages non lus lors de la connexion de l'utilisateur">
+      <option name="closed" value="true" />
+      <created>1737645322625</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645322625</updated>
+    </task>
+    <task id="LOCAL-00177" summary="Modification du getteur pour afficher l'image par défaut">
+      <option name="closed" value="true" />
+      <created>1737645363364</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645363364</updated>
+    </task>
+    <task id="LOCAL-00178" summary="Modification du boutton pour le mettre en formulaire pour envoyer l'id de l'utilisateur a qui envoyer le message">
+      <option name="closed" value="true" />
+      <created>1737645388372</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645388372</updated>
+    </task>
+    <task id="LOCAL-00179" summary="Modification de l'url du bouton découvrir + ajout de balise a autour de chaque livre pour pouvoir cliquer dessus">
+      <option name="closed" value="true" />
+      <created>1737645429774</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645429774</updated>
+    </task>
+    <task id="LOCAL-00180" summary="Ajout des icones dans le header + ajout des nombres de messages non lus">
+      <option name="closed" value="true" />
+      <created>1737645462936</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645462936</updated>
+    </task>
+    <task id="LOCAL-00181" summary="Protection de la saisie du message dans la bdd">
+      <option name="closed" value="true" />
+      <created>1737645483355</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645483355</updated>
+    </task>
+    <task id="LOCAL-00182" summary="Ajout d'une fonction pour compter le nombre de message non lu d'un destinataire">
+      <option name="closed" value="true" />
+      <created>1737645511004</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645511004</updated>
+    </task>
+    <task id="LOCAL-00183" summary="Mise en place d'un required pour que l'utilisateur ne puisse pas envoyer un champ vide">
+      <option name="closed" value="true" />
+      <created>1737645548604</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645548604</updated>
+    </task>
+    <task id="LOCAL-00184" summary="Modification du a pour mettre un form a la place pour pouvoir envoyer l'id de l'utilisateur en toute sécurité">
+      <option name="closed" value="true" />
+      <created>1737645582629</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645582629</updated>
+    </task>
+    <task id="LOCAL-00185" summary="Modification du style des container des livres de la page d'accueil + autres">
+      <option name="closed" value="true" />
+      <created>1737645611669</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1737645611669</updated>
+    </task>
+    <task id="LOCAL-00186" summary="Suppression du débug dans la page de librairie">
+      <option name="closed" value="true" />
+      <created>1737884773727</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1737884773727</updated>
+    </task>
+    <task id="LOCAL-00187" summary="Ajout de la fonction pour savoir qu'elle page est active + modification des liens">
+      <option name="closed" value="true" />
+      <created>1737884794822</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1737884794822</updated>
+    </task>
+    <task id="LOCAL-00188" summary="Modification du css pour les liens du menu">
+      <option name="closed" value="true" />
+      <created>1737884814231</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1737884814231</updated>
+    </task>
+    <task id="LOCAL-00189" summary="Modification des fonctions pour ajouter des conditions si l'utilisateur n'est pas connecté">
+      <option name="closed" value="true" />
+      <created>1738061252688</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061252688</updated>
+    </task>
+    <task id="LOCAL-00190" summary="Modification des fonctions pour ajouter des conditions si l'utilisateur n'est pas connecté">
+      <option name="closed" value="true" />
+      <created>1738061257731</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061257731</updated>
+    </task>
+    <task id="LOCAL-00191" summary="Ajout d'une condition pour afficher les erreurs lors de la connexion">
+      <option name="closed" value="true" />
+      <created>1738061285171</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061285171</updated>
+    </task>
+    <task id="LOCAL-00192" summary="Ajout d'une condition pour afficher le bouton d'envoie de message si l'id de l'utilisateur connecté est différent du destinataire">
+      <option name="closed" value="true" />
+      <created>1738061326594</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061326594</updated>
+    </task>
+    <task id="LOCAL-00193" summary="Modification de la page d'erreur">
+      <option name="closed" value="true" />
+      <created>1738061341609</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061341609</updated>
+    </task>
+    <task id="LOCAL-00194" summary="Modification du header">
+      <option name="closed" value="true" />
+      <created>1738061353947</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061353947</updated>
+    </task>
+    <task id="LOCAL-00195" summary="Modification de la condition , si l'utilisateur non connecté va sur la messagerie alors sa le renvoie sur la page de connexion">
+      <option name="closed" value="true" />
+      <created>1738061394881</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061394881</updated>
+    </task>
+    <task id="LOCAL-00196" summary="Ajout d'un lien cliquable sur l'image de chaque livres">
+      <option name="closed" value="true" />
+      <created>1738061418240</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061418240</updated>
+    </task>
+    <task id="LOCAL-00197" summary="Ajout de la condition que si les deux id ne sont pas les mêmes (utilisateur connecté et destinataire) alors afficher le bouton envoyer le message">
+      <option name="closed" value="true" />
+      <created>1738061471408</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061471408</updated>
+    </task>
+    <task id="LOCAL-00198" summary="Ajout d'une condition pour afficher un message d'erreur lors de l'inscription">
+      <option name="closed" value="true" />
+      <created>1738061493527</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061493527</updated>
+    </task>
+    <task id="LOCAL-00199" summary="Modification du style du header + du message d'erreur">
+      <option name="closed" value="true" />
+      <created>1738061517001</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1738061517001</updated>
+    </task>
+    <task id="LOCAL-00200" summary="Ajout des fichiers non commits (images de profil)">
+      <option name="closed" value="true" />
+      <created>1738064467889</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1738064467889</updated>
+    </task>
+    <task id="LOCAL-00201" summary="Modification , ajout des id pour les labels">
+      <option name="closed" value="true" />
+      <created>1738074555959</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074555959</updated>
+    </task>
+    <task id="LOCAL-00202" summary="Ajout des descriptions des images">
+      <option name="closed" value="true" />
+      <created>1738074578202</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074578202</updated>
+    </task>
+    <task id="LOCAL-00203" summary="Ajout des descriptions des images">
+      <option name="closed" value="true" />
+      <created>1738074586836</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074586836</updated>
+    </task>
+    <task id="LOCAL-00204" summary="Modification du nom de l'image">
+      <option name="closed" value="true" />
+      <created>1738074595317</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074595317</updated>
+    </task>
+    <task id="LOCAL-00205" summary="Ajout de la description des images">
+      <option name="closed" value="true" />
+      <created>1738074611994</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074611994</updated>
+    </task>
+    <task id="LOCAL-00206" summary="Ajout de la lang fr sur la balise html">
+      <option name="closed" value="true" />
+      <created>1738074626485</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074626485</updated>
+    </task>
+    <task id="LOCAL-00207" summary="Modification du nom de l'image">
+      <option name="closed" value="true" />
+      <created>1738074637861</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074637861</updated>
+    </task>
+    <task id="LOCAL-00208" summary="Remplacement de la balise button par une balise div pour être au norme">
+      <option name="closed" value="true" />
+      <created>1738074662801</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074662801</updated>
+    </task>
+    <task id="LOCAL-00209" summary="Ajout de la description sur les images">
+      <option name="closed" value="true" />
+      <created>1738074683669</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074683669</updated>
+    </task>
+    <task id="LOCAL-00210" summary="Ajout de la description sur les images">
+      <option name="closed" value="true" />
+      <created>1738074691416</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074691416</updated>
+    </task>
+    <task id="LOCAL-00211" summary="Ajout des id pour lié au label les inputs">
+      <option name="closed" value="true" />
+      <created>1738074704670</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074704670</updated>
+    </task>
+    <task id="LOCAL-00212" summary="Modification des couleurs pour valider le WACG niveau 2">
+      <option name="closed" value="true" />
+      <created>1738074724791</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074724791</updated>
+    </task>
+    <task id="LOCAL-00213" summary="Ajout description image et icon">
+      <option name="closed" value="true" />
+      <created>1738074745001</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074745001</updated>
+    </task>
+    <task id="LOCAL-00214" summary="Modification du nom de l'image">
+      <option name="closed" value="true" />
+      <created>1738074755998</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1738074755998</updated>
+    </task>
+    <task id="LOCAL-00215" summary="Ajout d'un controleur pour gérer les erreurs">
+      <option name="closed" value="true" />
+      <created>1738077722040</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1738077722040</updated>
+    </task>
+    <task id="LOCAL-00216" summary="Modification des liens du footer">
+      <option name="closed" value="true" />
+      <created>1738077733590</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1738077733603</updated>
+    </task>
+    <task id="LOCAL-00217" summary="Suppression d'un filtrage pour les messages">
+      <option name="closed" value="true" />
+      <created>1738077747550</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1738077747553</updated>
+    </task>
+    <task id="LOCAL-00218" summary="Modification du style du footer">
+      <option name="closed" value="true" />
+      <created>1738077761077</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1738077761077</updated>
+    </task>
+    <task id="LOCAL-00219" summary="Image de profil des utilisateurs">
+      <option name="closed" value="true" />
+      <created>1738141654590</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1738141654590</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ajout d'une condition pour afficher les erreurs lors de la connexion" />
+    <MESSAGE value="Ajout d'une condition pour afficher le bouton d'envoie de message si l'id de l'utilisateur connecté est différent du destinataire" />
+    <MESSAGE value="Modification de la page d'erreur" />
+    <MESSAGE value="Modification du header" />
+    <MESSAGE value="Modification de la condition , si l'utilisateur non connecté va sur la messagerie alors sa le renvoie sur la page de connexion" />
+    <MESSAGE value="Ajout d'un lien cliquable sur l'image de chaque livres" />
+    <MESSAGE value="Ajout de la condition que si les deux id ne sont pas les mêmes (utilisateur connecté et destinataire) alors afficher le bouton envoyer le message" />
+    <MESSAGE value="Ajout d'une condition pour afficher un message d'erreur lors de l'inscription" />
+    <MESSAGE value="Modification du style du header + du message d'erreur" />
+    <MESSAGE value="Ajout des fichiers non commits (images de profil)" />
+    <MESSAGE value="Modification , ajout des id pour les labels" />
+    <MESSAGE value="Ajout des descriptions des images" />
+    <MESSAGE value="Ajout de la description des images" />
+    <MESSAGE value="Ajout de la lang fr sur la balise html" />
+    <MESSAGE value="Remplacement de la balise button par une balise div pour être au norme" />
+    <MESSAGE value="Ajout de la description sur les images" />
+    <MESSAGE value="Ajout des id pour lié au label les inputs" />
+    <MESSAGE value="Modification des couleurs pour valider le WACG niveau 2" />
+    <MESSAGE value="Ajout description image et icon" />
+    <MESSAGE value="Modification du nom de l'image" />
+    <MESSAGE value="Ajout d'un controleur pour gérer les erreurs" />
+    <MESSAGE value="Modification des liens du footer" />
+    <MESSAGE value="Suppression d'un filtrage pour les messages" />
+    <MESSAGE value="Modification du style du footer" />
+    <MESSAGE value="Image de profil des utilisateurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image de profil des utilisateurs" />
+  </component>
+</project>
