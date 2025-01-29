@@ -35,11 +35,11 @@ $registrationDate = $userManager->getUserRegistrationDate($userId);
                 <h2>Vos informations personnelles</h2>
                 <form method="POST" action="index.php?action=updateUser">
                     <label for="email">Adresse mail</label>
-                    <input type="text" id="email" name="emailUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['email']); ?>">
+                    <input type="text" id="email" name="emailUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['email']); ?>" required>
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="passwordUpdate">
+                    <input type="password" id="password" name="passwordUpdate" required>
                     <label for="pseudo">Pseudo</label>
-                    <input type="text" id="pseudo" name="usernameUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>">
+                    <input type="text" id="pseudo" name="usernameUpdate" value="<?php echo htmlspecialchars($_SESSION['user']['username']); ?>" required>
                     <input type="submit" class="submit-modification" value="Enregistrer">
                 </form>
 
